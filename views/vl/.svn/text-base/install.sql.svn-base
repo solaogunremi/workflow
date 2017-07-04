@@ -1,0 +1,16 @@
+@@wf_vl_00_eml_job.sql
+@@wf_vl_00_eml_job_log.sql
+@@wf_vl_10_mb.sql
+@@wf_vl_10_rl.sql
+@@wf_vl_10_rl_mb.sql
+@@wf_vl_10_tp_tk.sql
+@@wf_vl_11_mb.sql
+@@wf_vl_11_mb_l.sql
+@@wf_vl_11_mb_r.sql
+@@wf_vl_20_cpr_doc.sql
+@@wf_vl_20_cpr_sig.sql
+@@wf_vl_20_dc_ac.sql
+@@wf_vl_20_dc_rej.sql
+@@wf_vl_20_doc.sql
+@@wf_vl_20_my_tk.sql
+@@wf_vl_20_ot_tk.sql

@@ -1,0 +1,34 @@
+CREATE OR REPLACE VIEW V_99_99_TRG  
+ ( T_N,
+ P_A,
+ T_A,
+ R_K,
+ O_RS,
+ N_RS,
+ I_TM,
+ I_KY,
+ A_TM,
+ A_KY,
+ U_TM,
+ U_KY,
+ S_KY,
+ S_DTM,
+ S_TMM) 
+ AS SELECT 
+ C50 T_N,
+ N1 P_A,
+ N1 T_A,
+ N38 R_K,
+ N1 O_RS,
+ N1 N_RS,
+ TMM I_TM,
+ N38 I_KY,
+ TMM A_TM,
+ N38 A_KY,
+ TMM U_TM,
+ N38 U_KY,
+ N38 S_KY,
+ DTT S_DTM,
+ TMM S_TMM 
+ FROM T_99_00_STC 
+ WHERE ROWNUM < 1 ;

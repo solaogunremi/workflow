@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/sequences
+END
+generate.bat
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/sequences/generate.bat
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/sequences/install.sql
+END
+wf_seq_20_doc.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/16710/branches/2.0/develop/oracle/private/WF/sequences/wf_seq_20_doc.sql
+END
+wf_seq_00_key.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/16795/branches/2.0/develop/oracle/private/WF/sequences/wf_seq_00_key.sql
+END
+wf_seq_20_act.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/16795/branches/2.0/develop/oracle/private/WF/sequences/wf_seq_20_act.sql
+END

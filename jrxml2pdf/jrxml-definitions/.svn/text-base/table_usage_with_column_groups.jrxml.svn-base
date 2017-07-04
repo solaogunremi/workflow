@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="reportTitle" fontSize="20" isBold="true"/>
+	<style name="reportSubTitle" mode="Transparent" forecolor="#3333FF" fontName="Arial" fontSize="12">
+		<box>
+			<bottomPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="columnHeader" mode="Transparent" forecolor="#000000" backcolor="#EEEEEE" fontName="Arial" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+	</style>
+	<style name="standardField" mode="Transparent" forecolor="#000000" backcolor="#FFFFFF" vAlign="Middle" fontName="Arial" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="alternateRow" mode="Transparent" hAlign="Left" vAlign="Middle" fontName="Arial" fontSize="12">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[jrxml2pdf.Wrappers.mod($V{REPORT_COUNT},2) == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#FFCCFF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table">
+		<box>
+			<pen lineWidth="2.0" lineColor="#000000"/>
+			<topPen lineWidth="2.0"/>
+			<leftPen lineWidth="2.0"/>
+			<bottomPen lineWidth="2.0"/>
+			<rightPen lineWidth="2.0"/>
+		</box>
+	</style>
+	<style name="table_columnHeader" mode="Opaque" forecolor="#000000" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="pageFooter" mode="Opaque" forecolor="#000000" backcolor="#CCCCFF"/>
+	<subDataset name="user_tab_cols">
+		<parameter name="pTableName" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select table_name, column_name, data_type, data_length, data_precision, data_scale from user_tab_cols
+where table_name = $P{pTableName}
+order by column_name]]>
+		</queryString>
+		<field name="TABLE_NAME" class="java.lang.String"/>
+		<field name="COLUMN_NAME" class="java.lang.String"/>
+		<field name="DATA_TYPE" class="java.lang.String"/>
+		<field name="DATA_LENGTH" class="java.math.BigDecimal"/>
+		<field name="DATA_PRECISION" class="java.math.BigDecimal"/>
+		<field name="DATA_SCALE" class="java.math.BigDecimal"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[select * from user_tables
+order by table_name]]>
+	</queryString>
+	<field name="TABLE_NAME" class="java.lang.String"/>
+	<field name="TABLESPACE_NAME" class="java.lang.String"/>
+	<field name="CLUSTER_NAME" class="java.lang.String"/>
+	<field name="IOT_NAME" class="java.lang.String"/>
+	<field name="STATUS" class="java.lang.String"/>
+	<field name="PCT_FREE" class="java.math.BigDecimal"/>
+	<field name="PCT_USED" class="java.math.BigDecimal"/>
+	<field name="INI_TRANS" class="java.math.BigDecimal"/>
+	<field name="MAX_TRANS" class="java.math.BigDecimal"/>
+	<field name="INITIAL_EXTENT" class="java.math.BigDecimal"/>
+	<field name="NEXT_EXTENT" class="java.math.BigDecimal"/>
+	<field name="MIN_EXTENTS" class="java.math.BigDecimal"/>
+	<field name="MAX_EXTENTS" class="java.math.BigDecimal"/>
+	<field name="PCT_INCREASE" class="java.math.BigDecimal"/>
+	<field name="FREELISTS" class="java.math.BigDecimal"/>
+	<field name="FREELIST_GROUPS" class="java.math.BigDecimal"/>
+	<field name="LOGGING" class="java.lang.String"/>
+	<field name="BACKED_UP" class="java.lang.String"/>
+	<field name="NUM_ROWS" class="java.math.BigDecimal"/>
+	<field name="BLOCKS" class="java.math.BigDecimal"/>
+	<field name="EMPTY_BLOCKS" class="java.math.BigDecimal"/>
+	<field name="AVG_SPACE" class="java.math.BigDecimal"/>
+	<field name="CHAIN_CNT" class="java.math.BigDecimal"/>
+	<field name="AVG_ROW_LEN" class="java.math.BigDecimal"/>
+	<field name="AVG_SPACE_FREELIST_BLOCKS" class="java.math.BigDecimal"/>
+	<field name="NUM_FREELIST_BLOCKS" class="java.math.BigDecimal"/>
+	<field name="DEGREE" class="java.lang.String"/>
+	<field name="INSTANCES" class="java.lang.String"/>
+	<field name="CACHE" class="java.lang.String"/>
+	<field name="TABLE_LOCK" class="java.lang.String"/>
+	<field name="SAMPLE_SIZE" class="java.math.BigDecimal"/>
+	<field name="LAST_ANALYZED" class="java.sql.Timestamp"/>
+	<field name="PARTITIONED" class="java.lang.String"/>
+	<field name="IOT_TYPE" class="java.lang.String"/>
+	<field name="TEMPORARY" class="java.lang.String"/>
+	<field name="SECONDARY" class="java.lang.String"/>
+	<field name="NESTED" class="java.lang.String"/>
+	<field name="BUFFER_POOL" class="java.lang.String"/>
+	<field name="FLASH_CACHE" class="java.lang.String"/>
+	<field name="CELL_FLASH_CACHE" class="java.lang.String"/>
+	<field name="ROW_MOVEMENT" class="java.lang.String"/>
+	<field name="GLOBAL_STATS" class="java.lang.String"/>
+	<field name="USER_STATS" class="java.lang.String"/>
+	<field name="DURATION" class="java.lang.String"/>
+	<field name="SKIP_CORRUPT" class="java.lang.String"/>
+	<field name="MONITORING" class="java.lang.String"/>
+	<field name="CLUSTER_OWNER" class="java.lang.String"/>
+	<field name="DEPENDENCIES" class="java.lang.String"/>
+	<field name="COMPRESSION" class="java.lang.String"/>
+	<field name="COMPRESS_FOR" class="java.lang.String"/>
+	<field name="DROPPED" class="java.lang.String"/>
+	<field name="READ_ONLY" class="java.lang.String"/>
+	<field name="SEGMENT_CREATED" class="java.lang.String"/>
+	<field name="RESULT_CACHE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<staticText>
+				<reportElement style="reportTitle" x="219" y="0" width="333" height="40"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Report with table-usage]]></text>
+			</staticText>
+			<image scaleImage="RealSize">
+				<reportElement x="1" y="0" width="208" height="132"/>
+				<imageExpression><![CDATA["logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="reportSubTitle" x="222" y="53" width="333" height="79"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[The report uses a table-component to show the columns of a table. The datatype uses nested column-groups. For the table JRXML_FONTS the columngroup for datalength is not printed.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="18" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="columnHeader" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textElement/>
+				<text><![CDATA[TABLE_NAME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<frame>
+				<reportElement style="alternateRow" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="standardField" x="0" y="0" width="555" height="18"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{TABLE_NAME}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<componentElement>
+				<reportElement key="table" style="table" x="1" y="18" width="551" height="18"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="user_tab_cols">
+						<datasetParameter name="pTableName">
+							<datasetParameterExpression><![CDATA[$F{TABLE_NAME}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="122">
+						<jr:columnHeader style="table_columnHeader" height="82" rowSpan="3">
+							<staticText>
+								<reportElement style="columnHeader" x="0" y="0" width="122" height="22"/>
+								<textElement/>
+								<text><![CDATA[COLUMN_NAME]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_columnHeader" height="30" rowSpan="1">
+							<textField>
+								<reportElement style="standardField" x="0" y="0" width="122" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{COLUMN_NAME}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90">
+						<jr:columnHeader style="table_columnHeader" height="82" rowSpan="3">
+							<staticText>
+								<reportElement style="columnHeader" x="0" y="0" width="90" height="22"/>
+								<textElement/>
+								<text><![CDATA[DATA_TYPE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_columnHeader" height="30" rowSpan="1">
+							<textField>
+								<reportElement style="standardField" x="0" y="0" width="90" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{DATA_TYPE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:columnGroup width="270">
+						<printWhenExpression><![CDATA[$F{TABLE_NAME}!="JRXML_FONTS"]]></printWhenExpression>
+						<jr:columnHeader style="table_columnHeader" height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="columnHeader" x="0" y="0" width="270" height="22"/>
+								<textElement/>
+								<text><![CDATA[DATA_LENGTH]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:column width="90">
+							<jr:columnHeader style="table_columnHeader" height="60" rowSpan="2">
+								<staticText>
+									<reportElement style="columnHeader" x="0" y="0" width="90" height="22"/>
+									<textElement/>
+									<text><![CDATA[Length (Chars)]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table_columnHeader" height="30" rowSpan="1">
+								<textField>
+									<reportElement style="standardField" x="0" y="0" width="90" height="22"/>
+									<textElement/>
+									<textFieldExpression><![CDATA[$F{DATA_LENGTH}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:columnGroup width="180">
+							<jr:columnHeader style="table_columnHeader" height="30" rowSpan="1">
+								<staticText>
+									<reportElement style="columnHeader" x="0" y="0" width="180" height="22"/>
+									<textElement/>
+									<text><![CDATA[Length (Number)]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="90">
+								<jr:columnHeader style="table_columnHeader" height="30" rowSpan="1">
+									<staticText>
+										<reportElement style="columnHeader" x="0" y="0" width="90" height="22"/>
+										<textElement/>
+										<text><![CDATA[Precision]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="table_columnHeader" height="30" rowSpan="1">
+									<textField isBlankWhenNull="true">
+										<reportElement style="standardField" x="0" y="0" width="90" height="22"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{DATA_PRECISION}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="90">
+								<jr:columnHeader style="table_columnHeader" height="30" rowSpan="1">
+									<staticText>
+										<reportElement style="columnHeader" x="0" y="0" width="90" height="22"/>
+										<textElement/>
+										<text><![CDATA[Scale]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="table_columnHeader" height="30" rowSpan="1">
+									<textField isBlankWhenNull="true">
+										<reportElement style="standardField" x="0" y="0" width="90" height="22"/>
+										<textElement/>
+										<textFieldExpression><![CDATA[$F{DATA_SCALE}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement style="pageFooter" mode="Opaque" x="-21" y="1" width="597" height="24"/>
+				<textField evaluationTime="Report">
+					<reportElement style="standardField" x="533" y="0" width="40" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="standardField" x="453" y="0" width="80" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="standardField" x="22" y="1" width="197" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

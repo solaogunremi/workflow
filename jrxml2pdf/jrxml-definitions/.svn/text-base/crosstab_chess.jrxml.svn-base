@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="crosstab3" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e0d6b4f1-0bb0-4b9e-b632-c6b43e9e86cc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center" vAlign="Middle"/>
+	<queryString>
+		<![CDATA[WITH ALPHA AS (SELECT CHR(64+LEVEL) ALPHA,
+                      LEVEL-1       NUM_ALPHA
+                 FROM DUAL CONNECT BY LEVEL<=8
+              ),
+     NUMS  AS (SELECT TO_CHAR(LEVEL) NUM,
+                      LEVEL          NUM_NUM
+                 FROM DUAL CONNECT BY LEVEL<=8
+              ),
+     MATRIX AS(SELECT ALPHA,
+                      NUM,
+                      NUM_NUM+NUM_ALPHA*8 VALUE
+                 FROM ALPHA,
+                      NUMS
+              )
+SELECT 'A-H' AH,
+       CASE WHEN ALPHA IN ('A', 'B', 'C', 'D') THEN
+         'A-D'
+       ELSE
+         'E-H'
+       END AD_EH,
+       CASE WHEN ALPHA IN ('A', 'B') THEN
+         'A-B'
+       WHEN ALPHA IN ('C', 'D') THEN
+         'C-D'
+       WHEN ALPHA IN ('E', 'F') THEN
+         'E-F'
+       ELSE
+         'G-H'
+       END AB_CD_EF_GH,
+       ALPHA,
+       '1-8' ONE_EIGHT,
+       CASE WHEN NUM IN ('1', '2', '3', '4') THEN
+         '1-4'
+       ELSE
+         '5-8'
+       END ONEFOUR_FIVEEIGHT,
+       CASE WHEN NUM IN ('1', '2') THEN
+         '1-2'
+       WHEN NUM IN ('3', '4') THEN
+         '3-4'
+       WHEN NUM IN ('5', '6') THEN
+         '5-6'
+       ELSE
+         '7-8'
+       END ONETWO_THREEFOUR_FIVESIX_SEVEN,
+       NUM,
+       VALUE
+  FROM MATRIX]]>
+	</queryString>
+	<field name="AH" class="java.lang.String"/>
+	<field name="AD_EH" class="java.lang.String"/>
+	<field name="AB_CD_EF_GH" class="java.lang.String"/>
+	<field name="ALPHA" class="java.lang.String"/>
+	<field name="ONE_EIGHT" class="java.lang.String"/>
+	<field name="ONEFOUR_FIVEEIGHT" class="java.lang.String"/>
+	<field name="ONETWO_THREEFOUR_FIVESIX_SEVEN" class="java.lang.String"/>
+	<field name="NUM" class="java.lang.String"/>
+	<field name="VALUE" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d8723acd-138d-422d-aed3-b0c68675c75c" x="0" y="0" width="802" height="48"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Multi-group-crosstab, grouping the fields from a chess-game (A-H, 1-8) in three levels. The measure-base starts with 1 on A-1 and ends with 64 on H-8]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="203" splitType="Stretch">
+			<crosstab>
+				<reportElement uuid="588cc748-db00-423b-b3c7-3b5082a21d62" x="0" y="0" width="802" height="203"/>
+				<rowGroup name="AH" width="70" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{AH}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents backcolor="#F0F8FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement uuid="8058810a-500c-46dc-8696-2f45e55f1160" style="Crosstab Data Text" x="0" y="0" width="70" height="25"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$V{AH}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents backcolor="#005FB3" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement uuid="fc946a42-835f-451b-bb53-b2e28a6541e6" x="0" y="0" width="140" height="25" forecolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Total AH]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="AD_EH" width="70" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{AD_EH}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents backcolor="#F0F8FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement uuid="b378cfb0-656c-4411-afcb-9abadd4f6870" style="Crosstab Data Text" x="0" y="0" width="70" height="25"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$V{AD_EH}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents backcolor="#BFE1FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement uuid="bf503c4b-3396-4bf6-9eeb-2d44f88ba05e" x="0" y="0" width="70" height="25"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Total AD_EH]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="AB_CD_EF_GH" width="100" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{AB_CD_EF_GH}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents>
+							<textField>
+								<reportElement uuid="ec8cf8b7-eaec-4cbb-98ae-eb5018ab5557" style="Crosstab Data Text" x="0" y="0" width="100" height="25"/>
+								<box>
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement/>
+								<textFieldExpression><![CDATA[$V{AB_CD_EF_GH}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents backcolor="#CCCCFF" mode="Opaque">
+							<staticText>
+								<reportElement uuid="7a2fa206-13a8-406b-9548-c5a9fe2b7d78" style="Crosstab Data Text" x="0" y="0" width="100" height="25"/>
+								<textElement markup="none"/>
+								<text><![CDATA[Total AB_CD_EF_GH]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="ONE_EIGHT" height="30" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{ONE_EIGHT}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents backcolor="#F0F8FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement uuid="e13c6218-53ec-4c23-8365-a1408b925e8e" style="Crosstab Data Text" x="0" y="0" width="50" height="30"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$V{ONE_EIGHT}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents backcolor="#005FB3" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement uuid="0c1ba967-471f-47ec-8b26-bdc615cf510c" x="0" y="0" width="50" height="60" forecolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Total ONE_EIGHT]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<columnGroup name="ONEFOUR_FIVEEIGHT" height="30" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{ONEFOUR_FIVEEIGHT}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents backcolor="#F0F8FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement uuid="4acd3b57-68e2-4361-bee5-f5cbe1667671" style="Crosstab Data Text" x="0" y="0" width="50" height="30"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$V{ONEFOUR_FIVEEIGHT}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents backcolor="#BFE1FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement uuid="c9e27448-8cf3-4a9f-9caa-465489c7e9b4" x="0" y="0" width="50" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Total ONEFOUR_FIVEEIGHT]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<columnGroup name="ONETWO_THREEFOUR_FIVESIX_SEVEN" height="30" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{ONETWO_THREEFOUR_FIVESIX_SEVEN}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents>
+							<textField>
+								<reportElement uuid="810277ac-1ac1-4cdf-a72c-ae66db2cdf9f" style="Crosstab Data Text" x="0" y="0" width="50" height="30"/>
+								<box>
+									<pen lineWidth="0.25"/>
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement/>
+								<textFieldExpression><![CDATA[$V{ONETWO_THREEFOUR_FIVESIX_SEVEN}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents backcolor="#CCCCFF" mode="Opaque">
+							<staticText>
+								<reportElement uuid="671e1025-6e3a-4c92-a7fc-a203c111ee70" style="Crosstab Data Text" x="0" y="0" width="50" height="30"/>
+								<textElement markup="none"/>
+								<text><![CDATA[Total ]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="ALPHAMeasure" class="java.lang.Integer" calculation="Sum">
+					<measureExpression><![CDATA[$F{VALUE}]]></measureExpression>
+				</measure>
+				<crosstabCell width="50" height="25">
+					<cellContents>
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="4bf91319-2c49-4946-b70f-0287bcda0bd7" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell height="25" rowTotalGroup="AH">
+					<cellContents backcolor="#005FB3" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="4f4f56af-38ff-43a4-926d-0ef3b3001d2d" style="Crosstab Data Text" x="0" y="0" width="50" height="25" forecolor="#FFFFFF"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="50" height="25" columnTotalGroup="ONE_EIGHT">
+					<cellContents backcolor="#005FB3" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="44161833-9177-4bf7-8ae3-e6f1e31d6683" style="Crosstab Data Text" x="0" y="0" width="50" height="25" forecolor="#FFFFFF"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AH" columnTotalGroup="ONE_EIGHT">
+					<cellContents backcolor="#005FB3" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="d9284c09-3aae-4ba5-9600-31106b087be4" style="Crosstab Data Text" x="0" y="0" width="50" height="25" forecolor="#FFFFFF"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="50" height="25" columnTotalGroup="ONEFOUR_FIVEEIGHT">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="0faeb1ce-81ae-4873-9b2d-7f06d19f9100" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AH" columnTotalGroup="ONEFOUR_FIVEEIGHT">
+					<cellContents backcolor="#005FB3" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="13990aaf-2e31-43e0-8a83-ab06e1c8fc4b" style="Crosstab Data Text" x="0" y="0" width="50" height="25" forecolor="#FFFFFF"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell height="25" rowTotalGroup="AD_EH">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="42b63f77-b831-4017-aeaf-30d8e651c000" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AD_EH" columnTotalGroup="ONE_EIGHT">
+					<cellContents backcolor="#005FB3" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="a9fb65a3-f316-4a0e-842c-7b0596178e73" style="Crosstab Data Text" x="0" y="0" width="50" height="25" forecolor="#FFFFFF"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AD_EH" columnTotalGroup="ONEFOUR_FIVEEIGHT">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="a184457c-d80d-4c13-ab7e-28c472a91b18" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AB_CD_EF_GH">
+					<cellContents backcolor="#CCCCFF" mode="Opaque">
+						<textField>
+							<reportElement uuid="e5b21ea7-5136-4223-a80c-b26ecf33e091" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<box>
+								<pen lineWidth="0.25"/>
+								<topPen lineWidth="0.25"/>
+								<leftPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.25"/>
+								<rightPen lineWidth="0.25"/>
+							</box>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AB_CD_EF_GH" columnTotalGroup="ONE_EIGHT">
+					<cellContents backcolor="#005FB3" mode="Opaque">
+						<textField>
+							<reportElement uuid="1e1c554a-61c1-47ab-9c78-b4b141e31633" style="Crosstab Data Text" x="0" y="0" width="50" height="25" forecolor="#FFFFFF"/>
+							<box>
+								<pen lineWidth="0.25"/>
+								<topPen lineWidth="0.25"/>
+								<leftPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.25"/>
+								<rightPen lineWidth="0.25"/>
+							</box>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AB_CD_EF_GH" columnTotalGroup="ONEFOUR_FIVEEIGHT">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<textField>
+							<reportElement uuid="c4df8127-bfef-4971-bcd0-02b6ba8dff95" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<box>
+								<pen lineWidth="0.25"/>
+								<topPen lineWidth="0.25"/>
+								<leftPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.25"/>
+								<rightPen lineWidth="0.25"/>
+							</box>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell height="25" columnTotalGroup="ONETWO_THREEFOUR_FIVESIX_SEVEN">
+					<cellContents backcolor="#CCCCFF" mode="Opaque">
+						<textField>
+							<reportElement uuid="34cee795-77d3-4e6b-8958-5325706580e1" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<box>
+								<pen lineWidth="0.25"/>
+								<topPen lineWidth="0.25"/>
+								<leftPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.25"/>
+								<rightPen lineWidth="0.25"/>
+							</box>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AH" columnTotalGroup="ONETWO_THREEFOUR_FIVESIX_SEVEN">
+					<cellContents backcolor="#005FB3" mode="Opaque">
+						<textField>
+							<reportElement uuid="a1fc870c-0891-4253-9a9f-f701fbebd14d" style="Crosstab Data Text" x="0" y="0" width="50" height="25" forecolor="#FFFFFF"/>
+							<box>
+								<pen lineWidth="0.25"/>
+								<topPen lineWidth="0.25"/>
+								<leftPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.25"/>
+								<rightPen lineWidth="0.25"/>
+							</box>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AD_EH" columnTotalGroup="ONETWO_THREEFOUR_FIVESIX_SEVEN">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<textField>
+							<reportElement uuid="e51e6c0d-f955-49a4-acc8-3e2bee09d6ba" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<box>
+								<pen lineWidth="0.25"/>
+								<topPen lineWidth="0.25"/>
+								<leftPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.25"/>
+								<rightPen lineWidth="0.25"/>
+							</box>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="AB_CD_EF_GH" columnTotalGroup="ONETWO_THREEFOUR_FIVESIX_SEVEN">
+					<cellContents backcolor="#CCCCFF" mode="Opaque">
+						<textField>
+							<reportElement uuid="26d841d5-d263-4373-a920-722ec3c9bd53" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<box>
+								<pen lineWidth="0.25"/>
+								<topPen lineWidth="0.25"/>
+								<leftPen lineWidth="0.25"/>
+								<bottomPen lineWidth="0.25"/>
+								<rightPen lineWidth="0.25"/>
+							</box>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ALPHAMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="map_component" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9138ce81-47eb-41af-b033-4a6fa5be1ab6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT 51.500152 LATITUDE,
+       -0.126236 LONGITUDE,
+       12  ZOOM,
+       'London, GB' TOWN
+  FROM DUAL
+UNION ALL
+SELECT 48.857035 LATITUDE,
+       2.352448 LONGITUDE,
+       11  ZOOM,
+       'Paris, France' TOWN
+  FROM DUAL
+UNION ALL
+SELECT 40.722283 LATITUDE,
+       -74.008026 LONGITUDE,
+       10  ZOOM,
+       'New York, US' TOWN
+  FROM DUAL]]>
+	</queryString>
+	<field name="LATITUDE" class="java.lang.Float"/>
+	<field name="LONGITUDE" class="java.lang.Float"/>
+	<field name="ZOOM" class="java.lang.Integer"/>
+	<field name="TOWN" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5fbfd200-83b2-4c4c-85e0-ac8f722139f7" x="0" y="0" width="555" height="38"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report with usage of the map-component. It shows some towns with according google-map.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1bd00469-5cfd-4853-89d0-3f0568ae7d70" x="0" y="49" width="555" height="17"/>
+				<textElement/>
+				<text><![CDATA[If you don't see any map, you might need to grant access to the map-url. See installation instructions.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="893abd62-daa9-46c9-8f39-50be3b64100e" x="0" y="66" width="555" height="36" forecolor="#FF3333"/>
+				<textElement/>
+				<text><![CDATA[The map-component in PL-jrxml2pdf uses the static-map-features of the google-map-api. Be sure to read the usage-notes before you use this in a production environment]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="324" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="4fff35c3-6d5f-4662-9739-eb9519479d2a" x="186" y="0" width="369" height="312"/>
+				<mp:map xmlns:mp="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<mp:latitudeExpression><![CDATA[$F{LATITUDE}]]></mp:latitudeExpression>
+					<mp:longitudeExpression><![CDATA[$F{LONGITUDE}]]></mp:longitudeExpression>
+					<mp:zoomExpression><![CDATA[$F{ZOOM}]]></mp:zoomExpression>
+				</mp:map>
+			</componentElement>
+			<textField>
+				<reportElement uuid="bc782060-1273-4b57-bbdc-74108f577c49" x="0" y="0" width="186" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOWN}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="8c09463d-25d6-4858-9cd0-7b83053f4fc3" x="0" y="320" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

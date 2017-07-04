@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="orders" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT ORD.ORDER_ID,
+       ORDER_TOTAL,
+       ORDER_TIMESTAMP,
+       CUST_FIRST_NAME,
+       CUST_LAST_NAME,
+       CUST_STREET_ADDRESS1,
+       CUST_STREET_ADDRESS2,
+       CUST_CITY,
+       CUST_POSTAL_CODE,
+       CUST_STATE
+  FROM DEMO_ORDERS       ORD,
+       DEMO_CUSTOMERS    CUS
+ WHERE ORD.CUSTOMER_ID=CUS.CUSTOMER_ID
+ ORDER BY ORD.ORDER_ID]]>
+	</queryString>
+	<field name="ORDER_ID" class="java.math.BigDecimal"/>
+	<field name="ORDER_TOTAL" class="java.math.BigDecimal"/>
+	<field name="ORDER_TIMESTAMP" class="java.sql.Timestamp"/>
+	<field name="CUST_FIRST_NAME" class="java.lang.String"/>
+	<field name="CUST_LAST_NAME" class="java.lang.String"/>
+	<field name="CUST_STREET_ADDRESS1" class="java.lang.String"/>
+	<field name="CUST_STREET_ADDRESS2" class="java.lang.String"/>
+	<field name="CUST_CITY" class="java.lang.String"/>
+	<field name="CUST_POSTAL_CODE" class="java.lang.String"/>
+	<field name="CUST_STATE" class="java.lang.String"/>
+	<group name="ORDER_ID" isStartNewPage="true" isResetPageNumber="true">
+		<groupExpression><![CDATA[$F{ORDER_ID}]]></groupExpression>
+		<groupHeader>
+			<band height="84">
+				<rectangle>
+					<reportElement x="0" y="0" width="572" height="84" forecolor="#CCCCCC" backcolor="#F0F0F0"/>
+				</rectangle>
+				<textField>
+					<reportElement x="497" y="60" width="75" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{ORDER_ID}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="0" width="167" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CUST_FIRST_NAME} + " " + $F{CUST_LAST_NAME}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="20" width="167" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CUST_STREET_ADDRESS1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="40" width="167" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CUST_STREET_ADDRESS2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="60" width="67" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CUST_POSTAL_CODE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="67" y="60" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CUST_CITY}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd.MM.yyyy">
+					<reportElement x="497" y="40" width="75" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{ORDER_TIMESTAMP}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="441" y="40" width="56" height="20"/>
+					<textElement/>
+					<text><![CDATA[Order date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="441" y="60" width="56" height="20"/>
+					<textElement/>
+					<text><![CDATA[Your order :]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="21">
+				<rectangle>
+					<reportElement x="0" y="0" width="572" height="20" forecolor="#F0F0F0" backcolor="#F0F0F0"/>
+				</rectangle>
+				<textField pattern="###0.00">
+					<reportElement x="509" y="0" width="63" height="20"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{ORDER_TOTAL}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="441" y="0" width="68" height="20"/>
+					<textElement/>
+					<text><![CDATA[Order total :]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="13"/>
+				<subreportParameter name="P_ORDER_ID">
+					<subreportParameterExpression><![CDATA[$F{ORDER_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["order_items.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="409" y="1" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Group" evaluationGroup="ORDER_ID">
+				<reportElement x="509" y="1" width="63" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="1" width="572" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/SymbolsInv/!svn/ver/18416/branches/2.0/develop/oracle/private/WF/symbols/tables
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SymbolsInv/!svn/ver/18416/branches/2.0/develop/oracle/private/WF/symbols/tables/install.sql
+END
+cs_90_wf_blb.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/SymbolsInv/!svn/ver/18414/branches/2.0/develop/oracle/private/WF/symbols/tables/cs_90_wf_blb.sql
+END
+st_00_00_dtd.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/SymbolsInv/!svn/ver/18414/branches/2.0/develop/oracle/private/WF/symbols/tables/st_00_00_dtd.sql
+END

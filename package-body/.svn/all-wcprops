@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/SymbolsInv/!svn/ver/18904/branches/2.0/develop/oracle/private/WF/package-body
+END
+pkwf_10_rl_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/16929/branches/2.0/develop/oracle/private/WF/package-body/pkwf_10_rl_body.sql
+END
+pkwf_01_eml_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18880/branches/2.0/develop/oracle/private/WF/package-body/pkwf_01_eml_body.sql
+END
+pkwf_11_rl_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/18319/branches/2.0/develop/oracle/private/WF/package-body/pkwf_11_rl_body.sql
+END
+pkwf_30_cs_new_c_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/SymbolsInv/!svn/ver/18877/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_cs_new_c_body.sql
+END
+pkwf_30_am_mf_rdm_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/SymbolsInv/!svn/ver/17265/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_am_mf_rdm_body.sql
+END
+pkwf_00_00_dmv_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/16799/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_00_dmv_body.sql
+END
+pkwf_00_vld_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18249/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_vld_body.sql
+END
+pkwf_00_dsp_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18249/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_dsp_body.sql
+END
+pkwf_89_cs_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/18880/branches/2.0/develop/oracle/private/WF/package-body/pkwf_89_cs_body.sql
+END
+pkwf_00_flx_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/16774/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_flx_body.sql
+END
+pkwf_00_jsn_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18792/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_jsn_body.sql
+END
+pkwf_00_pmr_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18419/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_pmr_body.sql
+END
+pkwf_00_acl_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18381/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_acl_body.sql
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/18381/branches/2.0/develop/oracle/private/WF/package-body/install.sql
+END
+pkwf_30_cs_reg_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17421/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_cs_reg_body.sql
+END
+pkwf_20_gen_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18904/branches/2.0/develop/oracle/private/WF/package-body/pkwf_20_gen_body.sql
+END
+pkwf_00_ath_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/17814/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_ath_body.sql
+END
+pkwf_30_gen_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18877/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_gen_body.sql
+END
+pkwf_10_eml_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18759/branches/2.0/develop/oracle/private/WF/package-body/pkwf_10_eml_body.sql
+END
+pkwf_00_00_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/18313/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_00_body.sql
+END
+pkwf_00_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SymbolsInv/!svn/ver/18234/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_body.sql
+END
+pkwf_30_cs_new_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/18880/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_cs_new_body.sql
+END
+pkwf_90_gen_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/16861/branches/2.0/develop/oracle/private/WF/package-body/pkwf_90_gen_body.sql
+END
+pkwf_30_cs_reg_2_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/SymbolsInv/!svn/ver/17710/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_cs_reg_2_body.sql
+END
+pkwf_00_00_err_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/16784/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_00_err_body.sql
+END
+pkwf_00_apx_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/16711/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_apx_body.sql
+END
+pkwf_90_alt_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18249/branches/2.0/develop/oracle/private/WF/package-body/pkwf_90_alt_body.sql
+END
+pkwf_30_cs_new_j_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/SymbolsInv/!svn/ver/18856/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_cs_new_j_body.sql
+END
+pkwf_30_ws_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/18880/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_ws_body.sql
+END
+pkwf_10_rl_mb_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/SymbolsInv/!svn/ver/16929/branches/2.0/develop/oracle/private/WF/package-body/pkwf_10_rl_mb_body.sql
+END
+generate.bat
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/package-body/generate.bat
+END
+pkwf_10_mb_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/16929/branches/2.0/develop/oracle/private/WF/package-body/pkwf_10_mb_body.sql
+END
+pkwf_11_mb_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/18216/branches/2.0/develop/oracle/private/WF/package-body/pkwf_11_mb_body.sql
+END
+pkwf_89_st_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/17192/branches/2.0/develop/oracle/private/WF/package-body/pkwf_89_st_body.sql
+END
+pkwf_30_ch_wdr_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17354/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_ch_wdr_body.sql
+END
+pkwf_00_pdf_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/16855/branches/2.0/develop/oracle/private/WF/package-body/pkwf_00_pdf_body.sql
+END
+pkwf_30_am_if_mnd_body.sql
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/SymbolsInv/!svn/ver/17265/branches/2.0/develop/oracle/private/WF/package-body/pkwf_30_am_if_mnd_body.sql
+END

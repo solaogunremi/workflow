@@ -1,0 +1,17 @@
+@@wf_00_00_dmd.sql
+@@wf_00_00_eml.sql
+@@wf_00_00_params.sql
+@@wf_00_eml.sql
+@@wf_00_errors.sql
+@@wf_10.sql
+@@wf_alerts.sql
+@@wf_email_html.sql
+@@wf_jrxml_insert.sql
+@@wf_jrxml_data_WF2000-00.sql
+@@wf_jrxml_data_WF3000-00.sql
+@@wf_jrxml_data_WF5000-01.sql
+@@wf_jrxml_data_WF5000-02.sql
+@@wf_jrxml_data_WF5100-01.sql
+@@wf_jrxml_data_WF5200-01.sql
+@@wf_jrxml_data_WF5200-02.sql@@
+@@wf_roles.sql

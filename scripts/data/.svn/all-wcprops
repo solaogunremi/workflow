@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/SymbolsInv/!svn/ver/18805/branches/2.0/develop/oracle/private/WF/scripts/data
+END
+generate.bat
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/scripts/data/generate.bat
+END
+migrate_domains.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/18365/branches/2.0/develop/oracle/private/WF/scripts/data/migrate_domains.sql
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/18359/branches/2.0/develop/oracle/private/WF/scripts/data/install.sql
+END
+wf_alerts.sql
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SymbolsInv/!svn/ver/18234/branches/2.0/develop/oracle/private/WF/scripts/data/wf_alerts.sql
+END
+wf_00_00_eml.sql
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SymbolsInv/!svn/ver/18319/branches/2.0/develop/oracle/private/WF/scripts/data/wf_00_00_eml.sql
+END
+wf_00_errors.sql
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/scripts/data/wf_00_errors.sql
+END
+wf_email_html.sql
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/SymbolsInv/!svn/ver/18359/branches/2.0/develop/oracle/private/WF/scripts/data/wf_email_html.sql
+END
+wf_00_eml.sql
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SymbolsInv/!svn/ver/18359/branches/2.0/develop/oracle/private/WF/scripts/data/wf_00_eml.sql
+END
+wf_10.sql
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/SymbolsInv/!svn/ver/18216/branches/2.0/develop/oracle/private/WF/scripts/data/wf_10.sql
+END
+wf_jrxml_insert.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/18359/branches/2.0/develop/oracle/private/WF/scripts/data/wf_jrxml_insert.sql
+END
+wf_00_00_params.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/18419/branches/2.0/develop/oracle/private/WF/scripts/data/wf_00_00_params.sql
+END
+wf_00_00_dmd.sql
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SymbolsInv/!svn/ver/18805/branches/2.0/develop/oracle/private/WF/scripts/data/wf_00_00_dmd.sql
+END
+wf_roles.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/18216/branches/2.0/develop/oracle/private/WF/scripts/data/wf_roles.sql
+END

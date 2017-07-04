@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="barchart" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95c2cb53-6500-41bf-9546-bf6d3b1c9871">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="8"/>
+	<subDataset name="Chartdata" uuid="40abc873-785f-4426-88d3-f9892af721e9">
+		<queryString>
+			<![CDATA[SELECT CUST_LAST_NAME,
+       SUM(ORDER_TOTAL) ORDER_SUM,
+       SUM(ORDER_TOTAL)*-0.95 ORDER_SUM2,
+       CASE WHEN CUST_LAST_NAME IN ('Dulles', 'Hartsfield', 'OHare') THEN
+         10000
+       ELSE
+         NULL
+       END ORDER_SUM3,
+       SUM(ORDER_TOTAL)*0.85 ORDER_SUM4,
+       SUM(ORDER_TOTAL)*0.80 ORDER_SUM5,
+       SUM(ORDER_TOTAL)*0.75 ORDER_SUM6,
+       SUM(ORDER_TOTAL)*0.70 ORDER_SUM7,
+       SUM(ORDER_TOTAL)*0.65 ORDER_SUM8,
+       SUM(ORDER_TOTAL)*0.60 ORDER_SUM9,
+       SUM(ORDER_TOTAL)*0.55 ORDER_SUM10,
+       SUM(ORDER_TOTAL)*0.50 ORDER_SUM11,
+       SUM(ORDER_TOTAL)*0.45 ORDER_SUM12,
+       SUM(ORDER_TOTAL)*0.40 ORDER_SUM13,
+       SUM(ORDER_TOTAL)*0.35 ORDER_SUM14,
+       SUM(ORDER_TOTAL)*0.30 ORDER_SUM15
+  FROM DEMO_ORDERS DO,
+       DEMO_CUSTOMERS DC
+ WHERE DO.CUSTOMER_ID=DC.CUSTOMER_ID
+ GROUP BY CUST_LAST_NAME]]>
+		</queryString>
+		<field name="CUST_LAST_NAME" class="java.lang.String"/>
+		<field name="ORDER_SUM" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM2" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM3" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM4" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM5" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM6" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM7" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM8" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM9" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM10" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM11" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM12" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM13" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM14" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM15" class="java.math.BigDecimal"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT 1 X FROM DUAL]]>
+	</queryString>
+	<field name="X" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="800" splitType="Stretch">
+			<stackedAreaChart>
+				<chart evaluationTime="Report">
+					<reportElement uuid="3e2fb893-870a-4138-9509-f27d088435a3" x="0" y="74" width="555" height="428"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="Chartdata" uuid="e8c8303b-afaf-4357-976a-338c4810876d"/>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum 3"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM3}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum 4"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM4}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<areaPlot>
+					<plot/>
+				</areaPlot>
+			</stackedAreaChart>
+			<staticText>
+				<reportElement uuid="a8635947-d536-4601-8167-3e7d88526df3" x="33" y="11" width="502" height="52"/>
+				<textElement textAlignment="Center">
+					<font size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stacked-area-chart]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

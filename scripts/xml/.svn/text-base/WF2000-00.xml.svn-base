@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2016-06-13T15:19:37 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="WebAccountReq" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="549f6e4d-0504-4e54-bf76-4ae0805f6ec6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from wf_vr_30_cs_reg]]>
+	</queryString>
+	<field name="ROW_KEY" class="java.math.BigDecimal"/>
+	<field name="D_ID" class="java.lang.String"/>
+	<field name="DC_TP_K" class="java.math.BigDecimal"/>
+	<field name="TP_ID" class="java.lang.String"/>
+	<field name="TP_DSC" class="java.lang.String"/>
+	<field name="DC_ID" class="java.lang.String"/>
+	<field name="DC_DTT" class="java.sql.Timestamp"/>
+	<field name="DC_ST_DM" class="java.lang.String"/>
+	<field name="DC_JSN" class="oracle.sql.CLOB"/>
+	<field name="MK_AC_ID" class="java.lang.String"/>
+	<field name="MK_AC_DSC" class="java.lang.String"/>
+	<field name="CUS_ID" class="java.lang.String"/>
+	<field name="CUS_DSC" class="java.lang.String"/>
+	<field name="PTF_ID" class="java.lang.String"/>
+	<field name="PTF_DSC" class="java.lang.String"/>
+	<field name="CSH_ID" class="java.lang.String"/>
+	<field name="CSH_DSC" class="java.lang.String"/>
+	<field name="AC_NM" class="java.lang.String"/>
+	<field name="DOB_DT" class="java.sql.Timestamp"/>
+	<field name="PRY_EM_AD" class="java.lang.String"/>
+	<field name="MBL_PHN" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="564" splitType="Stretch">
+			<staticText>
+				<reportElement x="184" y="12" width="215" height="20" uuid="b4cef642-44b0-4d35-91ea-f81872216c5e"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[WEB ACCOUNT REQUEST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="144" width="142" height="14" uuid="7898c983-2a5d-4a82-b2bb-4242908301b8"/>
+				<text><![CDATA[CSCS ACCOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="82" width="160" height="14" uuid="81510cee-e0fc-42a9-bf3a-dd881da929b3"/>
+				<text><![CDATA[APPLICATION ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="108" width="129" height="14" uuid="01cae27e-854c-4b8b-8053-294e38c048a6"/>
+				<text><![CDATA[CSCS ACCOUNT NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="177" width="142" height="14" uuid="2c3be118-03fe-431f-a4c5-bc142b25a986"/>
+				<text><![CDATA[CUSTOMER ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="213" width="142" height="14" uuid="c3b6d1c1-f75c-4879-8eea-334bf70ac85f"/>
+				<text><![CDATA[CUSTOMER NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="246" width="142" height="14" uuid="e8aac2a2-d8a3-4360-9eb7-8f11d676b338"/>
+				<text><![CDATA[PORTFOLIO ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="289" width="142" height="14" uuid="c98a107d-dab3-43fd-bc05-fed4649437a9"/>
+				<text><![CDATA[CASH ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="454" width="129" height="14" uuid="a392a2e2-7c8d-4c46-8259-d6a9b299cd7c"/>
+				<text><![CDATA[MOBILE PHONE]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="237" y="78" width="158" height="15" uuid="1a555764-1679-4ea9-aacd-41cb62bc5c08"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="79" width="112" height="14" uuid="058ae0dc-181e-4be7-80fe-b8f5667c861c"/>
+				<textFieldExpression><![CDATA[$F{DC_ID}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="237" y="108" width="158" height="15" uuid="8407d2dd-c63c-45bf-a0ae-4e79f008d083"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="108" width="100" height="14" uuid="ceb37039-a96a-4537-b10c-781f06d056fa"/>
+				<textFieldExpression><![CDATA[$F{MK_AC_ID}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="237" y="144" width="158" height="15" uuid="585fd355-ccb6-4780-957d-aec9c70ca065"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="144" width="100" height="14" uuid="4dab830a-aa08-4c8c-a63e-2f2c339e392c"/>
+				<textFieldExpression><![CDATA[$F{MK_AC_DSC}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="237" y="176" width="158" height="15" uuid="adfa9ad5-d92c-4071-8eef-26c2b19eaaab"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="177" width="100" height="14" uuid="c326338f-12e4-4957-8820-626ca52fb870"/>
+				<textFieldExpression><![CDATA[$F{CUS_ID}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="237" y="212" width="158" height="15" uuid="1a12e9d7-5869-4020-b2f5-18529149cb97"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="213" width="100" height="14" uuid="d03774b0-c074-4213-8342-2e5460890931"/>
+				<textFieldExpression><![CDATA[$F{CUS_DSC}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="237" y="245" width="158" height="15" uuid="ca334595-c1eb-4617-ac6d-308c9c36fd6d"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="246" width="100" height="14" uuid="9ff1241f-0fcf-4cde-b79c-53a704cef0f5"/>
+				<textFieldExpression><![CDATA[$F{PTF_ID}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="237" y="288" width="158" height="15" uuid="97b6bb49-67f1-4037-b5ab-0989957db90b"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="289" width="100" height="14" uuid="10113edf-578e-4129-8e74-519a17fb3fc3"/>
+				<textFieldExpression><![CDATA[$F{CSH_ID}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="237" y="319" width="158" height="15" uuid="1272d425-81b2-4bdc-9848-d16b0032483b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="320" width="142" height="14" uuid="d5ab42d8-3629-49d4-986d-f474d06ae87a"/>
+				<text><![CDATA[CASH DESCRIPTION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="242" y="320" width="100" height="14" uuid="fc8520c4-3530-449c-b3e1-b1a8652f754e"/>
+				<textFieldExpression><![CDATA[$F{CSH_DSC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="353" width="129" height="14" uuid="0a1abeac-a92f-4495-818d-f34ba7746747"/>
+				<text><![CDATA[WEB ACCOUNT NAME]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="237" y="353" width="158" height="15" uuid="8aef7dd6-6448-4f29-aced-30c5f3eeda32"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="353" width="100" height="14" uuid="6211e20a-eea8-407c-84a6-06db04494fec"/>
+				<textFieldExpression><![CDATA[$F{AC_NM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="385" width="129" height="14" uuid="bdd512bd-ecf1-4d28-9823-4dd490e1ab60"/>
+				<text><![CDATA[DATE OF BIRTH]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="237" y="385" width="158" height="15" uuid="d9b7e6fb-09cd-4519-9edb-8cce4e5111dd"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="385" width="100" height="14" uuid="60b21292-2293-4b60-b812-00ef09590270"/>
+				<textFieldExpression><![CDATA[$F{DOB_DT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="419" width="129" height="14" uuid="572edc28-549e-442f-9bbf-be390c966e6c"/>
+				<text><![CDATA[EMAIL ADDRESS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="237" y="419" width="158" height="15" uuid="e7cd44fb-2ea5-42dc-a90c-0aff18367a3b"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="419" width="100" height="14" uuid="7e6b0726-ba81-4ae5-83df-35f34d8154ea"/>
+				<textFieldExpression><![CDATA[$F{PRY_EM_AD}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="237" y="453" width="158" height="15" uuid="266dcf2a-e9b2-4df3-aebc-051e0b0e79f9"/>
+			</rectangle>
+			<textField>
+				<reportElement x="242" y="454" width="100" height="14" uuid="723bce62-9e46-4c01-9afa-f188307603d2"/>
+				<textFieldExpression><![CDATA[$F{MBL_PHN}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

@@ -1,0 +1,16 @@
+header.text=report to show the nls/locale-functionality. The locale used  {0}, resource-locale is empty (default)
+numbers.text=Numbers with and without formatmask
+dates.text=Dates with and without formatmask
+msg.text=Msg-usage
+int.no.format=Integer, no format mask
+float.no.format=Float, no format
+int.format=Integer, with format mask
+float.format=Float, with format
+date.no.format=Date, no format mask
+date.short.format=Date, format short,short
+date.medium.format=Date, format medium,medium
+date.long.format=Date, format long,long
+date.default.format=Date, format default,default
+date.resource.format=Date, format from ressourcefile
+dateformat=dd/MM/yyyy
+text.for.msg=This is the text which contains a placeholder here {0} and here {1}

@@ -1,0 +1,7 @@
+URI => http://10.0.0.26:80882/neulogic/workflow/api/cashwithdraw
+Method => POST
+HTTP header variable name => CUSTOMER
+Paramater Payload =>{
+"accountnumber":"0490084621",
+"amount":5000000
+}

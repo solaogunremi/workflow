@@ -1,0 +1,10 @@
+@./99/sequences/install.sql
+@./99/obj-types/install.sql
+@./99/scripts/install/create_wf_99_tables.sql
+@./99/scripts/sysdata/wf_99_errors.sql
+@./99/scripts/sysdata/wf_99_params.sql
+@./99/views/install.sql
+@./99/package-spec/install.sql
+@./99/package-body/install.sql
+@./99/views/install.sql
+@./99/scripts/install/create_wf_99_triggers2.sql

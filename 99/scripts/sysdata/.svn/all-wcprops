@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/scripts/sysdata
+END
+WF_99_ERRORS.sql
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/scripts/sysdata/WF_99_ERRORS.sql
+END
+Create_or Reset_WF_SETUP_Admin.sql
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/scripts/sysdata/Create_or%20Reset_WF_SETUP_Admin.sql
+END
+WF_99_PARAMS.sql
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/scripts/sysdata/WF_99_PARAMS.sql
+END

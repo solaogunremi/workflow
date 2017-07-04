@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CashWithdrawalReq" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="100a63b0-6220-4d3a-81a2-8c8e5ecb2b9f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from wf_vr_30_ch_wdr]]>
+	</queryString>
+	<field name="ROW_KEY" class="java.math.BigDecimal"/>
+	<field name="D_ID" class="java.lang.String"/>
+	<field name="DC_TP_K" class="java.math.BigDecimal"/>
+	<field name="TP_ID" class="java.lang.String"/>
+	<field name="TP_DSC" class="java.lang.String"/>
+	<field name="DC_ID" class="java.lang.String"/>
+	<field name="DC_DTT" class="java.sql.Timestamp"/>
+	<field name="DC_ST_DM" class="java.lang.String"/>
+	<field name="DC_JSN" class="oracle.sql.CLOB"/>
+	<field name="AC_ID" class="java.lang.String"/>
+	<field name="AC_DSC" class="java.lang.String"/>
+	<field name="PM_BK_ID" class="java.lang.String"/>
+	<field name="PM_BK_DSC" class="java.lang.String"/>
+	<field name="PM_BK_AC_NO" class="java.lang.String"/>
+	<field name="WDR_AMT" class="java.math.BigDecimal"/>
+	<field name="WDR_AMT_DSC" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="564" splitType="Stretch">
+			<staticText>
+				<reportElement x="184" y="12" width="215" height="20" uuid="f316d9f2-727d-4fcb-aa95-ba04fe096c25"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[CASH WITHDRAWAL REQUEST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="148" width="142" height="14" uuid="e9d94830-914e-4baa-af4b-e59f65bcdfa4"/>
+				<text><![CDATA[CASH ACCOUNT NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="82" width="160" height="13" uuid="8c600723-2ea7-43b4-b1d2-028e54836a1c"/>
+				<text><![CDATA[APPLICATION ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="112" width="101" height="14" uuid="79b979b7-9022-4655-b7e2-34377b0efe6e"/>
+				<text><![CDATA[CASH ACCOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="181" width="142" height="14" uuid="4bdfb9ca-f72b-468a-afa1-16a84fef7bf5"/>
+				<text><![CDATA[BANK ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="217" width="142" height="14" uuid="e6eb9de2-7b2c-4cae-8ccb-9fef77d2cabc"/>
+				<text><![CDATA[BANK NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="250" width="142" height="14" uuid="eb33bf38-55d9-42ac-be8b-1caade3b61f3"/>
+				<text><![CDATA[BANK ACCOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="284" width="142" height="14" uuid="545aec10-2153-4813-b1dd-af69fdafdb3b"/>
+				<text><![CDATA[WITHDRAWAL AMOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="316" width="182" height="14" uuid="f2c57293-608e-4ac4-a62e-4e71f17c7804"/>
+				<text><![CDATA[WITHDRAWAL AMOUNT IN WORDS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="235" y="81" width="158" height="15" uuid="bbd5b154-16c8-4059-b464-a73ed95901bb"/>
+			</rectangle>
+			<textField>
+				<reportElement x="240" y="82" width="131" height="14" uuid="25dd4584-27a9-47a1-b47f-d5830ba0a25b"/>
+				<textFieldExpression><![CDATA[$F{DC_ID}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="235" y="112" width="158" height="15" uuid="2ae7f534-37fa-47a5-a931-24b2891f8961"/>
+			</rectangle>
+			<textField>
+				<reportElement x="240" y="112" width="100" height="14" uuid="09eecafc-8fc8-4c07-9c36-fc9f5d3905e2"/>
+				<textFieldExpression><![CDATA[$F{AC_ID}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="235" y="148" width="158" height="15" uuid="e18c466e-70cb-4218-8982-121d456e5cad"/>
+			</rectangle>
+			<textField>
+				<reportElement x="240" y="148" width="100" height="14" uuid="8431d361-687f-4eea-bbc2-059f41cec965"/>
+				<textFieldExpression><![CDATA[$F{AC_DSC}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="235" y="181" width="158" height="15" uuid="a00b9086-e7e2-4df2-98b6-8eaf9ae1232e"/>
+			</rectangle>
+			<textField>
+				<reportElement x="240" y="181" width="97" height="14" uuid="81f5f0ad-991d-4c7e-8252-d767d117884c"/>
+				<textFieldExpression><![CDATA[$F{PM_BK_ID}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="235" y="217" width="158" height="15" uuid="f039fa64-e89c-4ddb-bded-a0652498ca35"/>
+			</rectangle>
+			<textField>
+				<reportElement x="240" y="217" width="100" height="14" uuid="01839e01-cdfb-4355-b17d-c1fbfafd5b9b"/>
+				<textFieldExpression><![CDATA[$F{PM_BK_DSC}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="235" y="250" width="158" height="15" uuid="e20f21ee-2c78-4836-9b95-cb9b5beac5bb"/>
+			</rectangle>
+			<textField>
+				<reportElement x="240" y="250" width="100" height="14" uuid="c481f812-2515-4a78-8fbc-5e8f0a53dfcb"/>
+				<textFieldExpression><![CDATA[$F{PM_BK_AC_NO}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="235" y="284" width="158" height="15" uuid="69f8a707-e7b9-4148-a4d5-943b43c80f6e"/>
+			</rectangle>
+			<textField>
+				<reportElement x="240" y="284" width="100" height="14" uuid="ab88d7f7-ddf8-4709-815c-485a021550c6"/>
+				<textFieldExpression><![CDATA[$F{WDR_AMT}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="235" y="316" width="158" height="15" uuid="f69c898b-29f2-4b04-b713-72fdc0fe36ef"/>
+			</rectangle>
+			<textField>
+				<reportElement x="240" y="316" width="100" height="14" uuid="af8d53d2-532a-4fe4-81c8-4d4689cc4a48"/>
+				<textFieldExpression><![CDATA[$F{WDR_AMT_DSC}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

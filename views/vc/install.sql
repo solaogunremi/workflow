@@ -1,0 +1,10 @@
+@@wf_vc_00_bnk.sql
+@@wf_vc_00_cs_cus.sql
+@@wf_vc_00_ctr.sql
+@@wf_vc_00_dd_act.sql
+@@wf_vc_00_nty.sql
+@@wf_vc_00_rln.sql
+@@wf_vc_00_sta.sql
+@@wf_vc_00_st_ptf.sql
+@@wf_vc_00_st_ptm.sql
+@@wf_vc_00_ttl.sql

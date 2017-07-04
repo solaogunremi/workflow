@@ -1,0 +1,32 @@
+DROP TYPE OT$_WF_DC_TK_TB FORCE
+/
+
+CREATE OR REPLACE TYPE OT$_WF_DC_TK AS OBJECT
+ (    TP_K              NUMBER(38),
+      TP_ID             VARCHAR2(50),
+      TP_DSC            VARCHAR2(250),
+      RP_ID             VARCHAR2(50),
+      DC_K              NUMBER(38),
+      DC_ID	            VARCHAR2(50),
+      DC_DSC            VARCHAR2(250),
+      ST_DTT            DATE,
+      DC_TK_K           NUMBER(38),
+      CR_SEQ_NO         NUMBER(38),
+      CR_SEQ_TK_K       NUMBER(38),
+      CR_SEQ_TK_ID      VARCHAR2(50),
+      CR_SEQ_TK_DSC     VARCHAR2(250),
+      LS_AC_DTT         DATE,
+      TK_STP            VARCHAR2(50),
+   CONSTRUCTOR FUNCTION OT$_WF_DC_TK RETURN SELF AS RESULT)
+/
+
+CREATE OR REPLACE TYPE BODY OT$_WF_DC_TK IS
+  CONSTRUCTOR FUNCTION OT$_WF_DC_TK RETURN SELF AS RESULT IS
+  BEGIN
+    RETURN;
+  END;
+END;
+/
+   
+CREATE OR REPLACE TYPE OT$_WF_DC_TK_TB AS TABLE OF OT$_WF_DC_TK
+/

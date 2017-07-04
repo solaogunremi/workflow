@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/SymbolsInv/!svn/ver/18423/branches/2.0/develop/oracle/private/WF/plugin/OraOpenSource-apex-plugin-clob-load-1.0-0/OraOpenSource-apex-plugin-clob-load-ac7db9a/src/plugin
+END
+apex-clob-load.js
+K 25
+svn:wc:ra_dav:version-url
+V 191
+/svn/SymbolsInv/!svn/ver/18423/branches/2.0/develop/oracle/private/WF/plugin/OraOpenSource-apex-plugin-clob-load-1.0-0/OraOpenSource-apex-plugin-clob-load-ac7db9a/src/plugin/apex-clob-load.js
+END
+plsql_code.sql
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/SymbolsInv/!svn/ver/18423/branches/2.0/develop/oracle/private/WF/plugin/OraOpenSource-apex-plugin-clob-load-1.0-0/OraOpenSource-apex-plugin-clob-load-ac7db9a/src/plugin/plsql_code.sql
+END
+apex-clob-load-worker.js
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/SymbolsInv/!svn/ver/18423/branches/2.0/develop/oracle/private/WF/plugin/OraOpenSource-apex-plugin-clob-load-1.0-0/OraOpenSource-apex-plugin-clob-load-ac7db9a/src/plugin/apex-clob-load-worker.js
+END

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="summing_up" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT EMPNO,
+       ENAME,
+       JOB,
+       MGR,
+       HIREDATE,
+       SAL,
+       DEPTNO,
+       SUM(SAL)            OVER (PARTITION BY 1) SUM_SAL,
+       COUNT(ENAME)        OVER (PARTITION BY 1) COUNT_EMP,
+       COUNT(DISTINCT JOB) OVER (PARTITION BY 1) COUNT__DIST_JOB
+  FROM EMP]]>
+	</queryString>
+	<field name="EMPNO" class="java.math.BigDecimal"/>
+	<field name="ENAME" class="java.lang.String"/>
+	<field name="JOB" class="java.lang.String"/>
+	<field name="MGR" class="java.math.BigDecimal"/>
+	<field name="HIREDATE" class="java.sql.Timestamp"/>
+	<field name="SAL" class="java.math.BigDecimal"/>
+	<field name="DEPTNO" class="java.math.BigDecimal"/>
+	<field name="SUM_SAL" class="java.math.BigDecimal"/>
+	<field name="COUNT_EMP" class="java.math.BigDecimal"/>
+	<field name="COUNT__DIST_JOB" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="53" y="0" width="437" height="35"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[My employees with some aggregations]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[EMPNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[ENAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[JOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[MGR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[HIREDATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[SAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="474" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[DEPTNO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{EMPNO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ENAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{JOB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{MGR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{HIREDATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DEPTNO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="158" y="0" width="79" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="none"/>
+				<text><![CDATA[No. of
+different jobs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="0" width="79" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="none"/>
+				<text><![CDATA[Total no. of
+employees]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="0" width="79" height="30"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="none"/>
+				<text><![CDATA[Sum of
+all salaries]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="79" y="30" width="79" height="22"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{COUNT_EMP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="30" width="79" height="22"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{COUNT__DIST_JOB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="30" width="79" height="22"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{SUM_SAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

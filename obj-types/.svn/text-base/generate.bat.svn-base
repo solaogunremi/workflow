@@ -1,0 +1,1 @@
+dir /b ot* >> install.sql

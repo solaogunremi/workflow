@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/SymbolsInv/!svn/ver/18861/branches/2.0/develop/oracle/private/WF/99/package-spec
+END
+PKWF_99_PWM_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_PWM_spec.sql
+END
+PKWF_99_ACS_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_ACS_spec.sql
+END
+PKWF_99_ATC_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_ATC_spec.sql
+END
+pk$990_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/SymbolsInv/!svn/ver/18218/branches/2.0/develop/oracle/private/WF/99/package-spec/pk$990_spec.sql
+END
+PKWF_99_EML_ITF_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_EML_ITF_spec.sql
+END
+PK99_ATH_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PK99_ATH_spec.sql
+END
+PKWF_99_EML_SND_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_EML_SND_spec.sql
+END
+PKWF_99_UMA_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_UMA_spec.sql
+END
+PKWF_99_NCR_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_NCR_spec.sql
+END
+PKWF_99_UMC_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_UMC_spec.sql
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/18861/branches/2.0/develop/oracle/private/WF/99/package-spec/install.sql
+END
+PKWF_99_VLD_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_VLD_spec.sql
+END
+PKWF_99_DMV_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_DMV_spec.sql
+END
+PKWF_99_VPD_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_VPD_spec.sql
+END
+PKWF_99_XCP_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_XCP_spec.sql
+END
+PKWF_99_SSI_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_SSI_spec.sql
+END
+PKWF_99_PMR_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_PMR_spec.sql
+END
+PK99_TRG_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/17814/branches/2.0/develop/oracle/private/WF/99/package-spec/PK99_TRG_spec.sql
+END
+PKWF_99_001_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17814/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_001_spec.sql
+END
+PKWF_99_ACP_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/18216/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_ACP_spec.sql
+END
+PKWF_99_GLB_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_GLB_spec.sql
+END
+PKWF_99_SWM_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_SWM_spec.sql
+END
+PKWF_99_SSS_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_SSS_spec.sql
+END
+PKWF_99_GEN_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_GEN_spec.sql
+END
+PKWF_99_ATH_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_ATH_spec.sql
+END
+PKWF_99_EML_SPEC.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/18249/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_EML_SPEC.sql
+END
+generate.bat
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/99/package-spec/generate.bat
+END
+PKWF_99_EML_MSG_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_EML_MSG_spec.sql
+END
+PKWF_99_DTM_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_DTM_spec.sql
+END
+PKWF_99_ERR_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_ERR_spec.sql
+END
+PKWF_99_CUR_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_CUR_spec.sql
+END
+PKWF_99_EML_PMR_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_EML_PMR_spec.sql
+END
+PKWF_99_TRG_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_TRG_spec.sql
+END
+PKWF_99_GU1_spec.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/package-spec/PKWF_99_GU1_spec.sql
+END

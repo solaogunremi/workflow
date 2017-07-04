@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="conditional_styles" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="EMP_SAL" mode="Opaque">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_SAL}<1000]]></conditionExpression>
+			<style backcolor="#9999FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_SAL}<1500]]></conditionExpression>
+			<style backcolor="#FF33FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_SAL}<2000]]></conditionExpression>
+			<style backcolor="#FF0066"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_SAL}<2500]]></conditionExpression>
+			<style backcolor="#FFFF00"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_SAL}<3000]]></conditionExpression>
+			<style backcolor="#00FF33"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_SAL}>=3000]]></conditionExpression>
+			<style backcolor="#00FFCC"/>
+		</conditionalStyle>
+	</style>
+	<style name="EMP_JOB" fontSize="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_JOB}=="PRESIDENT"]]></conditionExpression>
+			<style fontSize="15"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_JOB}=="MANAGER"]]></conditionExpression>
+			<style fontSize="13"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_JOB}=="ANALYST"]]></conditionExpression>
+			<style fontSize="11"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_JOB}=="SALESMAN"]]></conditionExpression>
+			<style fontSize="9"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{EMP_JOB}=="CLERK"]]></conditionExpression>
+			<style fontSize="7"/>
+		</conditionalStyle>
+	</style>
+	<style name="ROW_BANDING" mode="Opaque">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[jrxml2pdf.Wrappers.mod($V{REPORT_COUNT},2) == 0]]></conditionExpression>
+			<style backcolor="#CCCCCC"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT EMP.EMPNO EMP_EMPNO,
+       EMP.ENAME EMP_ENAME,
+       EMP.JOB   EMP_JOB,
+       EMP.SAL   EMP_SAL
+  FROM EMP]]>
+	</queryString>
+	<field name="EMP_EMPNO" class="java.math.BigDecimal"/>
+	<field name="EMP_ENAME" class="java.lang.String"/>
+	<field name="EMP_JOB" class="java.lang.String"/>
+	<field name="EMP_SAL" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="20"/>
+				<textElement/>
+				<text><![CDATA[EMP_EMPNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="138" height="20"/>
+				<textElement/>
+				<text><![CDATA[EMP_ENAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="138" height="20"/>
+				<textElement/>
+				<text><![CDATA[EMP_JOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="138" height="20"/>
+				<textElement/>
+				<text><![CDATA[EMP_SAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement style="ROW_BANDING" x="0" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{EMP_EMPNO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{EMP_ENAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="EMP_JOB" x="276" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{EMP_JOB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="EMP_SAL" x="414" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{EMP_SAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/SymbolsInv/!svn/ver/18381/branches/2.0/develop/oracle/private/WF/99/scripts/install
+END
+grant_99_schema_privileges.sql
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/SymbolsInv/!svn/ver/18381/branches/2.0/develop/oracle/private/WF/99/scripts/install/grant_99_schema_privileges.sql
+END
+create_wf_99_triggers.sql
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/scripts/install/create_wf_99_triggers.sql
+END
+create_wf_99_triggers2.sql
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/99/scripts/install/create_wf_99_triggers2.sql
+END
+create_wf_99_tables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/SymbolsInv/!svn/ver/18359/branches/2.0/develop/oracle/private/WF/99/scripts/install/create_wf_99_tables.sql
+END

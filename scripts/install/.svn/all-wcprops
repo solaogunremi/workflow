@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/SymbolsInv/!svn/ver/18319/branches/2.0/develop/oracle/private/WF/scripts/install
+END
+create-wf-tables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SymbolsInv/!svn/ver/18319/branches/2.0/develop/oracle/private/WF/scripts/install/create-wf-tables.sql
+END
+alter-wf-tables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/scripts/install/alter-wf-tables.sql
+END
+create-wf-links.sql
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/scripts/install/create-wf-links.sql
+END
+create wf_links.sql
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/SymbolsInv/!svn/ver/16799/branches/2.0/develop/oracle/private/WF/scripts/install/create%20wf_links.sql
+END

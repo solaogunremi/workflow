@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="emp_tree" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT MASTER,
+       DETAIL,
+       NEXTDETAIL,
+       LEVEL,
+       AKT,
+       SUBSTR(REPLACE(SUBSTR(SYS_CONNECT_BY_PATH(PREV, '#'), 1,LENGTH(SYS_CONNECT_BY_PATH(PREV, '#'))-1),'#', ''),1,1) LVL1,
+       SUBSTR(REPLACE(SUBSTR(SYS_CONNECT_BY_PATH(PREV, '#'), 1,LENGTH(SYS_CONNECT_BY_PATH(PREV, '#'))-1),'#', ''),2,1) LVL2,
+       SUBSTR(REPLACE(SUBSTR(SYS_CONNECT_BY_PATH(PREV, '#'), 1,LENGTH(SYS_CONNECT_BY_PATH(PREV, '#'))-1),'#', ''),3,1) LVL3,
+       SUBSTR(REPLACE(SUBSTR(SYS_CONNECT_BY_PATH(PREV, '#'), 1,LENGTH(SYS_CONNECT_BY_PATH(PREV, '#'))-1),'#', ''),4,1) LVL4,
+       SRT,
+       LABEL
+FROM (SELECT MASTER,
+             DETAIL,
+             NEXTDETAIL,
+             CASE WHEN NO_OF_SAME_LEVEL=COUNT_OF_SAME_LEVEL THEN
+               '1'
+             ELSE
+               '2'
+             END AKT,
+             CASE WHEN NO_OF_SAME_LEVEL=COUNT_OF_SAME_LEVEL THEN
+               '3'
+             ELSE
+               '4'
+             END PREV,
+             LABEL,
+             SRT
+      FROM (SELECT MASTER,
+                   DETAIL,
+                   LEAD(MASTER,1) OVER (ORDER BY ROWNUM ASC)               NEXTDETAIL,
+                   COUNT(*) OVER (PARTITION BY MASTER ORDER BY ROWNUM ASC) NO_OF_SAME_LEVEL,
+                   COUNT(*) OVER (PARTITION BY MASTER)                     COUNT_OF_SAME_LEVEL,
+                   ROW_NUMBER() OVER (ORDER BY ROWNUM )                  SRT,
+                   LABEL
+              FROM (SELECT NVL(MGR,-1)            MASTER,
+                           EMPNO                  DETAIL,
+                           ENAME || ',' || JOB    LABEL
+                      FROM EMP
+                    START WITH MGR IS NULL
+                    CONNECT BY PRIOR EMPNO=MGR
+                    ORDER SIBLINGS BY ENAME
+                   )
+            ORDER BY ROWNUM
+           )
+       )
+  START WITH MASTER=-1
+  CONNECT BY PRIOR DETAIL=MASTER
+  ORDER BY SRT]]>
+	</queryString>
+	<field name="MASTER" class="java.math.BigDecimal"/>
+	<field name="DETAIL" class="java.math.BigDecimal"/>
+	<field name="NEXTDETAIL" class="java.math.BigDecimal"/>
+	<field name="LEVEL" class="java.math.BigDecimal"/>
+	<field name="AKT" class="java.lang.String"/>
+	<field name="LVL1" class="java.lang.String"/>
+	<field name="LVL2" class="java.lang.String"/>
+	<field name="LVL3" class="java.lang.String"/>
+	<field name="LVL4" class="java.lang.String"/>
+	<field name="SRT" class="java.math.BigDecimal"/>
+	<field name="LABEL" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee hierarchy tree]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{LEVEL}==1]]></printWhenExpression>
+			<textField>
+				<reportElement mode="Transparent" x="22" y="0" width="533" height="20" backcolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LABEL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="1" height="10"/>
+			</line>
+			<line>
+				<reportElement x="11" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{AKT}=="2" || $F{AKT}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="11" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{AKT}=="1" || $F{AKT}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{LEVEL}==2]]></printWhenExpression>
+			<textField>
+				<reportElement mode="Transparent" x="44" y="0" width="511" height="20" backcolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LABEL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL1}=="2" || $F{LVL1}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="11" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL1}=="2" || $F{LVL1}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="11" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{LVL1}=="1" || $F{LVL1}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="0" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{AKT}=="1" || $F{AKT}=="2" || $F{AKT}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{AKT}=="2" || $F{AKT}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{AKT}=="1" || $F{AKT}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{LEVEL}==3]]></printWhenExpression>
+			<textField>
+				<reportElement mode="Transparent" x="66" y="0" width="489" height="20" backcolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LABEL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL1}=="2" || $F{LVL1}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="11" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL1}=="2" || $F{LVL1}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="11" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{LVL1}=="1" || $F{LVL1}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="0" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL2}=="2" || $F{LVL2}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL2}=="2" || $F{LVL2}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{LVL2}=="1" || $F{LVL2}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="55" y="0" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{AKT}=="1" || $F{AKT}=="2" || $F{AKT}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="55" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{AKT}=="2" || $F{AKT}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="55" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{AKT}=="1" || $F{AKT}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+		<band height="20">
+			<printWhenExpression><![CDATA[$F{LEVEL}==4]]></printWhenExpression>
+			<textField>
+				<reportElement mode="Transparent" x="88" y="1" width="502" height="19" backcolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LABEL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL1}=="2" || $F{LVL1}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="11" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL1}=="2" || $F{LVL1}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="11" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{LVL1}=="1" || $F{LVL1}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="0" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL2}=="2" || $F{LVL2}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL2}=="2" || $F{LVL2}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{LVL2}=="1" || $F{LVL2}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="55" y="0" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL3}=="1" || $F{LVL3}=="2" || $F{LVL3}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="55" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{LVL3}=="2" || $F{LVL3}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="55" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{LVL3}=="1" || $F{LVL3}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="77" y="0" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{AKT}=="1" || $F{AKT}=="2" || $F{AKT}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="77" y="10" width="1" height="10">
+					<printWhenExpression><![CDATA[$F{AKT}=="2" || $F{AKT}=="4"]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="77" y="10" width="10" height="1">
+					<printWhenExpression><![CDATA[$F{AKT}=="1" || $F{AKT}=="2"]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

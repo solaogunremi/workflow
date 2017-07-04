@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="crosstab_daterow" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="09d50ff3-e527-4e77-a499-01330d68354c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#7FFFD4">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFFFEA">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFFFF9"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="States" uuid="3f736e95-c19c-457e-b645-2ffac69fab1a">
+		<queryString language="SQL">
+			<![CDATA[SELECT ST,
+       STATE_NAME
+  FROM DEMO_STATES
+ WHERE ST IN (select CUST_STATE
+			    from demo_orders do,
+				     demo_customers dc
+			   where do.customer_id=dc.customer_id
+			  )
+ORDER BY 1]]>
+		</queryString>
+		<field name="ST" class="java.lang.String"/>
+		<field name="STATE_NAME" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[select CUST_STATE,
+       ORDER_TIMESTAMP MONTH,
+       ORDER_TOTAL
+  from demo_orders do,
+       demo_customers dc
+where do.customer_id=dc.customer_id]]>
+	</queryString>
+	<field name="CUST_STATE" class="java.lang.String"/>
+	<field name="MONTH" class="java.sql.Timestamp"/>
+	<field name="ORDER_TOTAL" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="cf88ae6f-daeb-41c9-a2c5-fe0f9e645068" x="0" y="0" width="555" height="33"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Crosstab-example, showing the amount of all demo_orders by date and state]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="90" splitType="Stretch">
+			<crosstab>
+				<reportElement uuid="5996be5e-d29a-45fb-bdd0-5c47cb22b1fa" x="0" y="0" width="555" height="90"/>
+				<rowGroup name="MONTH" width="70" totalPosition="End">
+					<bucket class="java.sql.Timestamp">
+						<bucketExpression><![CDATA[$F{MONTH}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents backcolor="#00FFA9" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement uuid="d8279ab5-2b3a-41c2-ba40-9c0a6eaf2270" style="Crosstab Data Text" x="0" y="0" width="70" height="25"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$V{MONTH}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents backcolor="#E6FFF6" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement uuid="64f6abb7-b174-453a-94c3-501cbf994c62" x="0" y="0" width="70" height="35"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Total for all months]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="CUST_STATE" height="30" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{CUST_STATE}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents backcolor="#00FFA9" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement uuid="678c2c42-602f-4a47-bd46-ee05895acba9" style="Crosstab Data Text" x="0" y="0" width="50" height="30"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$V{CUST_STATE}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents backcolor="#E6FFF6" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement uuid="29a2d0cc-ae45-493a-a718-72f69e6a13fd" x="0" y="0" width="50" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Total for all state]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="ORDER_TOTALMeasure" class="java.math.BigDecimal" calculation="Sum">
+					<measureExpression><![CDATA[$F{ORDER_TOTAL}]]></measureExpression>
+				</measure>
+				<crosstabCell width="50" height="25">
+					<cellContents>
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="ff31de81-d067-4f41-bb56-f79189bb6707" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ORDER_TOTALMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell height="35" rowTotalGroup="MONTH">
+					<cellContents backcolor="#E6FFF6" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="dc425f5c-eb84-4ef5-820a-9da16a6e8187" style="Crosstab Data Text" x="0" y="0" width="50" height="35"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ORDER_TOTALMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="50" columnTotalGroup="CUST_STATE">
+					<cellContents backcolor="#E6FFF6" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="5f43475d-c104-4d33-9655-088f28564ce2" style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ORDER_TOTALMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell height="35" rowTotalGroup="MONTH" columnTotalGroup="CUST_STATE">
+					<cellContents backcolor="#E6FFF6" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement uuid="70f9b929-df82-4d38-af1a-95260df3654e" style="Crosstab Data Text" x="0" y="0" width="50" height="35"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$V{ORDER_TOTALMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+			<componentElement>
+				<reportElement uuid="916e5687-d3ec-4463-8765-94b2d9359982" key="table" style="table" x="555" y="0" width="247" height="90"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="States" uuid="357a869e-bf0c-4c39-a300-e5d265f52cb2">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:columnGroup uuid="8f10c918-886f-4b92-ac08-cafa5c7875df" width="181">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="96be062f-eae1-4109-9a76-ed4b147ff5db" x="0" y="0" width="181" height="30"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" isBold="true"/>
+								</textElement>
+								<text><![CDATA[State information]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:column uuid="da5be00f-d74f-4177-97ba-dfeb694ba8e9" width="61">
+							<jr:columnHeader height="21" rowSpan="1">
+								<staticText>
+									<reportElement uuid="4e38c13c-c0ff-4895-8d9e-c6d34346ad97" x="0" y="0" width="61" height="20"/>
+									<box>
+										<bottomPen lineWidth="0.5"/>
+									</box>
+									<textElement textAlignment="Center">
+										<font fontName="Arial" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Shortcut]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="20" rowSpan="1">
+								<textField>
+									<reportElement uuid="9fae916a-4f8b-410a-a79c-107c44a86cd0" x="0" y="0" width="61" height="20"/>
+									<textElement>
+										<font fontName="Arial"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{ST}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column uuid="1151a373-341d-4f8d-b19c-ddf2b8d3b2d7" width="120">
+							<jr:columnHeader height="21" rowSpan="1">
+								<staticText>
+									<reportElement uuid="a1f77b93-6863-46e2-9f70-1355a8265d61" x="0" y="0" width="120" height="20"/>
+									<box>
+										<leftPen lineWidth="0.5"/>
+										<bottomPen lineWidth="0.5"/>
+									</box>
+									<textElement textAlignment="Center">
+										<font fontName="Arial" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Description]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="20" rowSpan="1">
+								<textField>
+									<reportElement uuid="b366559b-5947-4079-94d2-60ab9ffe741d" x="0" y="0" width="120" height="20"/>
+									<textElement>
+										<font fontName="Arial"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{STATE_NAME}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

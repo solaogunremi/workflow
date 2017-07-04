@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/SymbolsInv/!svn/ver/18904/branches/2.0/develop/oracle/private/WF
+END
+logo.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SymbolsInv/!svn/ver/18316/branches/2.0/develop/oracle/private/WF/logo.jpg
+END
+99_installation.log
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/99_installation.log
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/SymbolsInv/!svn/ver/18425/branches/2.0/develop/oracle/private/WF/install.sql
+END
+upgrade.sql
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/SymbolsInv/!svn/ver/18880/branches/2.0/develop/oracle/private/WF/upgrade.sql
+END
+icon.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SymbolsInv/!svn/ver/18359/branches/2.0/develop/oracle/private/WF/icon.jpg
+END
+wrap.sql
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SymbolsInv/!svn/ver/18316/branches/2.0/develop/oracle/private/WF/wrap.sql
+END
+favicon.png
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/SymbolsInv/!svn/ver/18316/branches/2.0/develop/oracle/private/WF/favicon.png
+END
+create_99_triggers.log
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/create_99_triggers.log
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/SymbolsInv/!svn/ver/18423/branches/2.0/develop/oracle/private/WF/README.txt
+END
+WF_installation.log
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/SymbolsInv/!svn/ver/18371/branches/2.0/develop/oracle/private/WF/WF_installation.log
+END
+recompile.sql
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/recompile.sql
+END

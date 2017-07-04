@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/views/vc
+END
+generate.bat
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/views/vc/generate.bat
+END
+wf_vc_00_dd_act.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SymbolsInv/!svn/ver/16861/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_dd_act.sql
+END
+wf_vc_00_cs_cus.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SymbolsInv/!svn/ver/16861/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_cs_cus.sql
+END
+wf_vc_00_st_ptf.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SymbolsInv/!svn/ver/16861/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_st_ptf.sql
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/views/vc/install.sql
+END
+wf_vc_00_ttl.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/16845/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_ttl.sql
+END
+wf_vc_00_st_ptm.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SymbolsInv/!svn/ver/16861/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_st_ptm.sql
+END
+wf_vc_00_sta.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/16845/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_sta.sql
+END
+wf_vc_00_ctr.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/16845/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_ctr.sql
+END
+wf_vc_00_bnk.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/16850/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_bnk.sql
+END
+wf_vc_00_nty.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/16845/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_nty.sql
+END
+wf_vc_00_rln.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/16861/branches/2.0/develop/oracle/private/WF/views/vc/wf_vc_00_rln.sql
+END

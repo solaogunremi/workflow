@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="images" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT 1X,
+       DEMO_PRODUCT_INFO.PRODUCT_ID           DEMO_PRODUCT_INFO_PRODUCT_ID,
+       DEMO_PRODUCT_INFO.PRODUCT_NAME         DEMO_PRODUCT_INFO_PRODUCT_NAME,
+       DEMO_PRODUCT_INFO.PRODUCT_DESCRIPTION  DEMO_PRODUCT_INFO_PRODUCT_DESC,
+       DEMO_PRODUCT_INFO.CATEGORY             DEMO_PRODUCT_INFO_CATEGORY,
+       DEMO_PRODUCT_INFO.PRODUCT_IMAGE        DEMO_PRODUCT_INFO_PRODUCT_IMAG
+  FROM DEMO_PRODUCT_INFO]]>
+	</queryString>
+	<field name="X" class="java.math.BigDecimal"/>
+	<field name="DEMO_PRODUCT_INFO_PRODUCT_ID" class="java.math.BigDecimal"/>
+	<field name="DEMO_PRODUCT_INFO_PRODUCT_NAME" class="java.lang.String"/>
+	<field name="DEMO_PRODUCT_INFO_PRODUCT_DESC" class="java.lang.String"/>
+	<field name="DEMO_PRODUCT_INFO_CATEGORY" class="java.lang.String"/>
+	<field name="DEMO_PRODUCT_INFO_PRODUCT_IMAG" class="oracle.sql.BLOB"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="178" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="6" width="554" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="318" y="57" width="223" height="80"/>
+				<textElement>
+					<font fontName="Arial" size="36"/>
+				</textElement>
+				<text><![CDATA[Image-Demo]]></text>
+			</staticText>
+			<image>
+				<reportElement x="14" y="37" width="222" height="100"/>
+				<imageExpression><![CDATA["D:\\Dropbox\\Dropbox\\work\\jrxml2pdf-release\\jrxml-definitions\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Image]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="81" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="81"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DEMO_PRODUCT_INFO_PRODUCT_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="81"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DEMO_PRODUCT_INFO_PRODUCT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="81"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DEMO_PRODUCT_INFO_PRODUCT_DESC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="81"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DEMO_PRODUCT_INFO_CATEGORY}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="444" y="0" width="111" height="81"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<imageExpression><![CDATA[$F{DEMO_PRODUCT_INFO_PRODUCT_IMAG}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

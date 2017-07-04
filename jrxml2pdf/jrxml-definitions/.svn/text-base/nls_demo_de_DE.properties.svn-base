@@ -1,0 +1,16 @@
+header.text=Report zur Demonstration von NLS/Locale-Funktionalität. Reportaufruf erfolgte mit {0}, resource-locale ist de_DE
+numbers.text=Zahlen mit und ohne Formatmaske
+dates.text=Datumswerte mit und ohne Formatmaske
+msg.text=Verwendung von msg
+int.no.format=Integer, ohne Formatmaske
+float.no.format=Float, ohne Formatmaske
+int.format=Integer, mit Formatmaske
+float.format=Float, mit Formatmaske
+date.no.format=Datum, ohne Formatmaske
+date.short.format=Datum, mit Formatmaske short,short
+date.medium.format=Datum, mit Formatmaske medium,medium
+date.long.format=Datum, mit Formatmaske long,long
+date.default.format=Datum, mit Formatmaske default,default
+date.resource.format=Datum, mit Formatmaske aus Resource-file
+dateformat=dd.MM.yyyy
+text.for.msg=Dies ist ein text mit einem Platzhalter hier {0} und einem hier {1}

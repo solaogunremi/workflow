@@ -1,0 +1,124 @@
+> Prompt ===========================================================     
+===========================================================
+> Prompt INSTALLING Workflow DB OBJECTS - Symbols Side
+INSTALLING Workflow DB OBJECTS - Symbols Side
+> Prompt ===========================================================  
+===========================================================
+> Prompt      
+
+> Prompt
+
+> Prompt creating WF Views
+creating WF Views
+> Prompt ___________________________________________________________
+___________________________________________________________
+> Prompt 
+
+> @./views/install.sql
+
+Error starting at line : 1 File @ C:\Neulogic\private\WF\symbols\views\v_99_10_usrs_all_ext.sql
+In command -
+CREATE OR REPLACE VIEW v_99_10_usrs_all_ext 
+AS
+SELECT  *
+FROM    v_99_10_usrs_all@wf_sy a
+WHERE sta_dm IN ('N')
+AND NOT EXISTS (SELECT 1 
+                  FROM   t_99_10_ssu b
+                  WHERE  a.usr_id = b.lgn_id)
+Error at Command Line : 4 Column : 26 File @ C:\Neulogic\private\WF\symbols\views\v_99_10_usrs_all_ext.sql
+Error report -
+SQL Error: ORA-02019: connection description for remote database not found
+02019. 00000 -  "connection description for remote database not found"
+*Cause:    
+*Action:
+> Prompt     
+
+> Prompt
+
+> Prompt
+
+> Prompt
+
+> Prompt creating WF Package
+creating WF Package
+> Prompt ___________________________________________________________
+___________________________________________________________
+> Prompt 
+
+> @./package-spec/install.sql
+PACKAGE PKCS_90_WF compiled
+PACKAGE PKCH_90 compiled
+PACKAGE PKST_90_WF compiled
+PACKAGE PK99_90_WF compiled
+PACKAGE PKWF_90 compiled
+> @./package-body/install.sql
+PACKAGE BODY PKCS_90_WF compiled
+Errors: check compiler log
+PACKAGE BODY PKCH_90 compiled
+Errors: check compiler log
+PACKAGE BODY PKST_90_WF compiled
+Errors: check compiler log
+PACKAGE BODY PK99_90_WF compiled
+Errors: check compiler log
+PACKAGE BODY PKWF_90 compiled
+> Prompt     
+
+> Prompt
+
+> Prompt
+
+> Prompt creating WF Views
+creating WF Views
+> Prompt ___________________________________________________________
+___________________________________________________________
+> Prompt 
+
+> @./views/install.sql
+
+Error starting at line : 1 File @ C:\Neulogic\private\WF\symbols\views\v_99_10_usrs_all_ext.sql
+In command -
+CREATE OR REPLACE VIEW v_99_10_usrs_all_ext 
+AS
+SELECT  *
+FROM    v_99_10_usrs_all@wf_sy a
+WHERE sta_dm IN ('N')
+AND NOT EXISTS (SELECT 1 
+                  FROM   t_99_10_ssu b
+                  WHERE  a.usr_id = b.lgn_id)
+Error at Command Line : 4 Column : 26 File @ C:\Neulogic\private\WF\symbols\views\v_99_10_usrs_all_ext.sql
+Error report -
+SQL Error: ORA-02019: connection description for remote database not found
+02019. 00000 -  "connection description for remote database not found"
+*Cause:    
+*Action:
+> Prompt
+
+> Prompt
+
+> Prompt recompiling invalid objects
+recompiling invalid objects
+> Prompt ___________________________________________________________
+___________________________________________________________
+> Prompt
+
+> @@recompile.sql
+
+Error starting at line : 35 in command -
+@@recompile.sql
+Error report -
+Unable to open file: "recompile.sql"
+> Prompt 
+
+> Prompt 
+
+> Prompt WF Objects Installed
+WF Objects Installed
+> Prompt 
+
+> Prompt Please read the Installation log file...
+Please read the Installation log file...
+> Prompt 
+
+> Prompt ;-) 
+;-)

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="demo_charts" language="groovy" pageWidth="1190" pageHeight="842" orientation="Landscape" columnWidth="1150" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12399ccc-b402-4eb9-9cad-5f4ed67ec820">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="211"/>
+	<subDataset name="Chartdata" uuid="40abc873-785f-4426-88d3-f9892af721e9">
+		<queryString>
+			<![CDATA[SELECT CUST_LAST_NAME,
+       SUM(ORDER_TOTAL) ORDER_SUM,
+       SUM(ORDER_TOTAL)*-0.95 ORDER_SUM2,
+       SUM(ORDER_TOTAL)*0.90 ORDER_SUM3,
+       SUM(ORDER_TOTAL)*0.85 ORDER_SUM4,
+       SUM(ORDER_TOTAL)*0.80 ORDER_SUM5,
+       SUM(ORDER_TOTAL)*0.75 ORDER_SUM6,
+       SUM(ORDER_TOTAL)*0.70 ORDER_SUM7,
+       SUM(ORDER_TOTAL)*0.65 ORDER_SUM8,
+       SUM(ORDER_TOTAL)*0.60 ORDER_SUM9,
+       SUM(ORDER_TOTAL)*0.55 ORDER_SUM10,
+       SUM(ORDER_TOTAL)*0.50 ORDER_SUM11,
+       SUM(ORDER_TOTAL)*0.45 ORDER_SUM12,
+       SUM(ORDER_TOTAL)*0.40 ORDER_SUM13,
+       SUM(ORDER_TOTAL)*0.35 ORDER_SUM14,
+       SUM(ORDER_TOTAL)*0.30 ORDER_SUM15
+  FROM DEMO_ORDERS DO,
+       DEMO_CUSTOMERS DC
+ WHERE DO.CUSTOMER_ID=DC.CUSTOMER_ID
+ GROUP BY CUST_LAST_NAME]]>
+		</queryString>
+		<field name="CUST_LAST_NAME" class="java.lang.String"/>
+		<field name="ORDER_SUM" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM2" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM3" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM4" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM5" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM6" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM7" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM8" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM9" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM10" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM11" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM12" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM13" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM14" class="java.math.BigDecimal"/>
+		<field name="ORDER_SUM15" class="java.math.BigDecimal"/>
+	</subDataset>
+	<subDataset name="Chartdata_Age" uuid="40abc873-785f-4426-88d3-f9892af721e9">
+		<queryString>
+			<![CDATA[SELECT 20 AGE,
+       1500 INCOME_MALE,
+       1350 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT 25 AGE,
+       1700 INCOME_MALE,
+       1850 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT 30 AGE,
+       2000 INCOME_MALE,
+       2100 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT 35 AGE,
+       2200 INCOME_MALE,
+       2200 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT 40 AGE,
+       2500 INCOME_MALE,
+       2250 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT 45 AGE,
+       2700 INCOME_MALE,
+       2400 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT 50 AGE,
+       2750 INCOME_MALE,
+       2500 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT 55 AGE,
+       2750 INCOME_MALE,
+       2550 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT 60 AGE,
+       2800 INCOME_MALE,
+       2700 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT 65 AGE,
+       2900 INCOME_MALE,
+       2500 INCOME_FEMALE
+  FROM DUAL]]>
+		</queryString>
+		<field name="AGE" class="java.math.BigDecimal"/>
+		<field name="INCOME_MALE" class="java.math.BigDecimal"/>
+		<field name="INCOME_FEMALE" class="java.math.BigDecimal"/>
+	</subDataset>
+	<subDataset name="Chartdata_Date" uuid="40abc873-785f-4426-88d3-f9892af721e9">
+		<queryString>
+			<![CDATA[SELECT TO_DATE('1.1.1992', 'DD.MM.YYYY') BIRTHDAY,
+       700 INCOME_MALE,
+       1350 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT TO_DATE('1.1.1987', 'DD.MM.YYYY') BIRTHDAY,
+       1700 INCOME_MALE,
+       1850 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT TO_DATE('1.1.1982', 'DD.MM.YYYY') BIRTHDAY,
+       2000 INCOME_MALE,
+       2100 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT TO_DATE('1.1.1977', 'DD.MM.YYYY') BIRTHDAY,
+       2200 INCOME_MALE,
+       2200 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT TO_DATE('1.1.1972', 'DD.MM.YYYY') BIRTHDAY,
+       2500 INCOME_MALE,
+       2250 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT TO_DATE('1.1.1967', 'DD.MM.YYYY') BIRTHDAY,
+       2700 INCOME_MALE,
+       2400 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT TO_DATE('1.1.1962', 'DD.MM.YYYY') BIRTHDAY,
+       2750 INCOME_MALE,
+       2500 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT TO_DATE('1.1.1957', 'DD.MM.YYYY') BIRTHDAY,
+       2750 INCOME_MALE,
+       2550 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT TO_DATE('1.1.1952', 'DD.MM.YYYY') BIRTHDAY,
+       2800 INCOME_MALE,
+       2700 INCOME_FEMALE
+  FROM DUAL
+UNION ALL
+SELECT TO_DATE('1.1.1947', 'DD.MM.YYYY') BIRTHDAY,
+       2900 INCOME_MALE,
+       2500 INCOME_FEMALE
+  FROM DUAL]]>
+		</queryString>
+		<field name="BIRTHDAY" class="java.sql.Timestamp"/>
+		<field name="INCOME_MALE" class="java.math.BigDecimal"/>
+		<field name="INCOME_FEMALE" class="java.math.BigDecimal"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT 1 X
+  FROM DUAL]]>
+	</queryString>
+	<field name="X" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4ac79d3b-30bd-47e6-808d-93c2b75eb045" x="0" y="0" width="1150" height="30"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[The reports shows the usage of the chart-types supported in Release 1.1 of PL-JRXML2PDF]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="618" splitType="Stretch">
+			<pieChart>
+				<chart>
+					<reportElement uuid="6e76d982-6dce-44cf-9f63-22165bb681ff" x="0" y="0" width="386" height="326"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<chartTitle>
+						<font size="18" isBold="true"/>
+						<titleExpression><![CDATA["A Piechart"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="Chartdata" uuid="e5c25c1f-a44d-47f7-8781-e28b834e8537"/>
+					</dataset>
+					<keyExpression><![CDATA[$F{CUST_LAST_NAME}]]></keyExpression>
+					<valueExpression><![CDATA[$F{ORDER_SUM}]]></valueExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<barChart>
+				<chart>
+					<reportElement uuid="637e222a-c293-456b-a228-428a9cff18ee" x="386" y="0" width="383" height="326"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<chartTitle>
+						<font size="18" isBold="true"/>
+						<titleExpression><![CDATA["A barchart"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="Chartdata" uuid="9389fd9f-b137-45dd-9c26-7a346cbc106b"/>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM}]]></valueExpression>
+						<labelExpression><![CDATA[$F{ORDER_SUM}+""]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum 80%"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM4}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum 60%"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM9}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="false">
+					<plot labelRotation="45.0"/>
+					<itemLabel/>
+				</barPlot>
+			</barChart>
+			<bar3DChart>
+				<chart>
+					<reportElement uuid="e01381be-564f-481d-9932-d2f92c62a656" x="769" y="0" width="381" height="326"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<chartTitle>
+						<font size="18" isBold="true"/>
+						<titleExpression><![CDATA[" A 3d-barchart"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="Chartdata" uuid="480b1c43-1da0-4530-b856-c6f2f8eb1211"/>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum 60%"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM9}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum negative"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM2}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot labelRotation="90.0">
+						<seriesColor seriesOrder="0" color="#FF9999"/>
+						<seriesColor seriesOrder="1" color="#FF3333"/>
+						<seriesColor seriesOrder="2" color="#CC0033"/>
+					</plot>
+					<itemLabel/>
+				</bar3DPlot>
+			</bar3DChart>
+			<lineChart>
+				<chart>
+					<reportElement uuid="045f944d-a729-4b99-a240-b3fdf23c4d21" x="0" y="326" width="386" height="292"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<chartTitle>
+						<font size="18" isBold="true"/>
+						<titleExpression><![CDATA["A category linechart"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="Chartdata" uuid="564be36a-4ab8-4434-be5e-b3323a943e14"/>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum 80%"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM4}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order sum 60%"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{CUST_LAST_NAME}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDER_SUM9}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+				</linePlot>
+			</lineChart>
+			<xyLineChart>
+				<chart>
+					<reportElement uuid="4bf4712a-28dc-46fb-98cb-7fc6df4d73f2" x="386" y="326" width="383" height="292"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<chartTitle>
+						<font size="18" isBold="true"/>
+						<titleExpression><![CDATA["A XY-linechart"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<xyDataset>
+					<dataset>
+						<datasetRun subDataset="Chartdata_Age" uuid="2df0bcc7-e7fc-438f-b604-4440ef83b7fd"/>
+					</dataset>
+					<xySeries>
+						<seriesExpression><![CDATA["Income male"]]></seriesExpression>
+						<xValueExpression><![CDATA[$F{AGE}]]></xValueExpression>
+						<yValueExpression><![CDATA[$F{INCOME_MALE}]]></yValueExpression>
+						<labelExpression><![CDATA["Hand"]]></labelExpression>
+					</xySeries>
+					<xySeries>
+						<seriesExpression><![CDATA["Income female"]]></seriesExpression>
+						<xValueExpression><![CDATA[$F{AGE}]]></xValueExpression>
+						<yValueExpression><![CDATA[$F{INCOME_FEMALE}]]></yValueExpression>
+						<labelExpression><![CDATA["Hund"]]></labelExpression>
+					</xySeries>
+				</xyDataset>
+				<linePlot>
+					<plot labelRotation="0.0"/>
+				</linePlot>
+			</xyLineChart>
+			<timeSeriesChart>
+				<chart>
+					<reportElement uuid="6bd14a77-0920-43e0-8202-cee424dcc8fb" x="769" y="326" width="381" height="292"/>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<chartTitle>
+						<font size="18" isBold="true"/>
+						<titleExpression><![CDATA["A timeseries-linechart"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<timeSeriesDataset>
+					<dataset>
+						<datasetRun subDataset="Chartdata_Date" uuid="270669f5-8f19-45d4-971a-43b85f079e05"/>
+					</dataset>
+					<timeSeries>
+						<seriesExpression><![CDATA["Male income"]]></seriesExpression>
+						<timePeriodExpression><![CDATA[$F{BIRTHDAY}]]></timePeriodExpression>
+						<valueExpression><![CDATA[$F{INCOME_MALE}]]></valueExpression>
+					</timeSeries>
+					<timeSeries>
+						<seriesExpression><![CDATA["Female income"]]></seriesExpression>
+						<timePeriodExpression><![CDATA[$F{BIRTHDAY}]]></timePeriodExpression>
+						<valueExpression><![CDATA[$F{INCOME_FEMALE}]]></valueExpression>
+					</timeSeries>
+				</timeSeriesDataset>
+				<timeSeriesPlot isShowLines="false">
+					<plot/>
+				</timeSeriesPlot>
+			</timeSeriesChart>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/SymbolsInv/!svn/ver/18862/branches/2.0/develop/oracle/private/WF/rest
+END
+web_post_symbols_local.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/SymbolsInv/!svn/ver/17364/branches/2.0/develop/oracle/private/WF/rest/web_post_symbols_local.sql
+END
+web_post_workflow_local.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SymbolsInv/!svn/ver/18862/branches/2.0/develop/oracle/private/WF/rest/web_post_workflow_local.sql
+END
+com_neulogicsolutions_workflow.sql
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/SymbolsInv/!svn/ver/18862/branches/2.0/develop/oracle/private/WF/rest/com_neulogicsolutions_workflow.sql
+END
+web_get_symbols_local.sql
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/SymbolsInv/!svn/ver/18862/branches/2.0/develop/oracle/private/WF/rest/web_get_symbols_local.sql
+END
+wf_get_workflow_local.sql
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/SymbolsInv/!svn/ver/17364/branches/2.0/develop/oracle/private/WF/rest/wf_get_workflow_local.sql
+END

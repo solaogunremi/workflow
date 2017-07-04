@@ -1,0 +1,46 @@
+CREATE OR REPLACE VIEW wf_vr_30_cs_new_c
+AS
+SELECT  dc.row_key,
+        dc.d_id,
+        dc.dc_tp_k,  
+        tp.tp_id,
+        tp.tp_dsc,
+        dc.dc_id,
+        dc.dc_dtt,
+        dc.dc_st_dm,
+        dc.dc_jsn,
+        --
+        dc.org_nm,
+        dc.reg_nbr,
+        dc.tax_id,
+        dc.reg_dt,
+        dc.reg_ctr_cd,
+        pkwf_00_00.fn_get_ctr_dsc(dc.reg_ctr_cd) reg_ctr_cd_dsc,
+        dc.org_ad1,
+        dc.org_ad2,
+        dc.org_cty,
+        dc.org_sta_cd,
+        pkwf_00_00.fn_get_sta_dsc(dc.org_sta_cd) org_sta_cd_dsc,
+        dc.org_zip,
+        dc.org_ctr_cd,
+        pkwf_00_00.fn_get_ctr_dsc(dc.org_ctr_cd) org_ctr_cd_dsc,
+        dc.est_trn_val,
+        dc.bk_nm,
+        dc.bk_ac_no,
+        dc.bk_ac_nm,
+        dc.bk_br_nm,
+        dc.bk_st_cd,
+        dc.bk_a_ad1,
+        dc.bk_a_ad2,
+        dc.bk_a_cty,
+        dc.bk_a_sta_cd,
+        pkwf_00_00.fn_get_sta_dsc(dc.bk_a_sta_cd) bk_a_sta_cd_dsc,
+        dc.bk_a_zip,
+        dc.bk_a_ctr_cd,
+        pkwf_00_00.fn_get_ctr_dsc(dc.bk_a_ctr_cd) bk_a_ctr_cd_dsc,
+        p.pdt_id,
+        p.pdt_dsc
+  FROM wf_vi_30_cs_new_c dc, wf_10_tp tp, wf_v_00_dc_pdt p
+ WHERE dc.dc_tp_k = tp.row_key
+   AND dc.dc_id = p.dc_id;
+/

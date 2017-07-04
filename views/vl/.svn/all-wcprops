@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SymbolsInv/!svn/ver/18880/branches/2.0/develop/oracle/private/WF/views/vl
+END
+wf_vl_20_my_tk.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_20_my_tk.sql
+END
+wf_vl_20_cpr_sig.sql
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SymbolsInv/!svn/ver/18880/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_20_cpr_sig.sql
+END
+wf_vl_20_dc_rej.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SymbolsInv/!svn/ver/18856/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_20_dc_rej.sql
+END
+wf_vl_20_dc_ac.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/18316/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_20_dc_ac.sql
+END
+wf_vl_10_rl_mb.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_10_rl_mb.sql
+END
+wf_vl_10_mb.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_10_mb.sql
+END
+wf_vl_11_mb.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/17169/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_11_mb.sql
+END
+generate.bat
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/views/vl/generate.bat
+END
+wf_vl_00_eml_job.sql
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SymbolsInv/!svn/ver/18319/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_00_eml_job.sql
+END
+wf_vl_20_doc.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SymbolsInv/!svn/ver/18381/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_20_doc.sql
+END
+wf_vl_00_eml_job_log.sql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SymbolsInv/!svn/ver/18319/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_00_eml_job_log.sql
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/SymbolsInv/!svn/ver/18877/branches/2.0/develop/oracle/private/WF/views/vl/install.sql
+END
+wf_vl_11_mb_l.sql
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SymbolsInv/!svn/ver/17169/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_11_mb_l.sql
+END
+wf_vl_20_cpr_doc.sql
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SymbolsInv/!svn/ver/17786/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_20_cpr_doc.sql
+END
+wf_vl_10_rl.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_10_rl.sql
+END
+wf_vl_11_mb_r.sql
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SymbolsInv/!svn/ver/17169/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_11_mb_r.sql
+END
+wf_vl_10_tp_tk.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/17169/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_10_tp_tk.sql
+END
+wf_vl_20_ot_tk.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/views/vl/wf_vl_20_ot_tk.sql
+END

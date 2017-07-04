@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SymbolsInv/!svn/ver/18861/branches/2.0/develop/oracle/private/WF/99/views
+END
+generate.bat
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/99/views/generate.bat
+END
+V_99_$$_WF_USR.sql
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/99/views/V_99_$$_WF_USR.sql
+END
+V_99_99_TRG.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/views/V_99_99_TRG.sql
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/SymbolsInv/!svn/ver/18861/branches/2.0/develop/oracle/private/WF/99/views/install.sql
+END
+V_99_$$_LST_CUR.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SymbolsInv/!svn/ver/18216/branches/2.0/develop/oracle/private/WF/99/views/V_99_$$_LST_CUR.sql
+END
+V_99_99_UMR.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/views/V_99_99_UMR.sql
+END
+V_99_99_DTM.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/18216/branches/2.0/develop/oracle/private/WF/99/views/V_99_99_DTM.sql
+END
+V_99_11_MDU.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/18231/branches/2.0/develop/oracle/private/WF/99/views/V_99_11_MDU.sql
+END
+v_99_20_msg_pnd.sql
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/99/views/v_99_20_msg_pnd.sql
+END
+V_99_99_SSS.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/18216/branches/2.0/develop/oracle/private/WF/99/views/V_99_99_SSS.sql
+END
+V_99_99_LGG.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/17802/branches/2.0/develop/oracle/private/WF/99/views/V_99_99_LGG.sql
+END
+V_99_99_USR.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/18216/branches/2.0/develop/oracle/private/WF/99/views/V_99_99_USR.sql
+END

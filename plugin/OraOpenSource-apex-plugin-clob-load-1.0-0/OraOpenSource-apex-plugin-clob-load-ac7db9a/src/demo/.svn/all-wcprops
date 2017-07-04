@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/SymbolsInv/!svn/ver/18423/branches/2.0/develop/oracle/private/WF/plugin/OraOpenSource-apex-plugin-clob-load-1.0-0/OraOpenSource-apex-plugin-clob-load-ac7db9a/src/demo
+END
+BLOB_CLOB_TEXT_install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/SymbolsInv/!svn/ver/18423/branches/2.0/develop/oracle/private/WF/plugin/OraOpenSource-apex-plugin-clob-load-1.0-0/OraOpenSource-apex-plugin-clob-load-ac7db9a/src/demo/BLOB_CLOB_TEXT_install.sql
+END
+BLOB_CLOB_TEXT_uninstall.sql
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/SymbolsInv/!svn/ver/18423/branches/2.0/develop/oracle/private/WF/plugin/OraOpenSource-apex-plugin-clob-load-1.0-0/OraOpenSource-apex-plugin-clob-load-ac7db9a/src/demo/BLOB_CLOB_TEXT_uninstall.sql
+END

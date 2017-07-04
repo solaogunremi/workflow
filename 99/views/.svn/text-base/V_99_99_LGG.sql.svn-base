@@ -1,0 +1,24 @@
+CREATE OR REPLACE VIEW V_99_99_LGG   
+ ( T_N,
+ T_A,
+ R_K,
+ D_1,
+ D_2,
+ D_3,
+ D_4,
+ D_5,
+ D_6,
+ D_7) 
+ AS SELECT 
+ C50 T_N,
+ N1 T_A,
+ N38 R_K,
+ C100 D_1,
+ C100 D_2,
+ C100 D_3,
+ C500 D_4,
+ C500 D_5,
+ C500 D_6,
+ C2000 D_7 
+ FROM T_99_00_STC 
+ WHERE ROWNUM < 1 ;

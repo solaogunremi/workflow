@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/SymbolsInv/!svn/ver/17679/branches/2.0/develop/oracle/private/WF/wb/views/clients/CSL
+END
+dd_vr_10_xfr_slf.sql
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/SymbolsInv/!svn/ver/17679/branches/2.0/develop/oracle/private/WF/wb/views/clients/CSL/dd_vr_10_xfr_slf.sql
+END
+dd_vr_10_xfr_bnk.sql
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/SymbolsInv/!svn/ver/17679/branches/2.0/develop/oracle/private/WF/wb/views/clients/CSL/dd_vr_10_xfr_bnk.sql
+END
+dd_vr_10_xfr_oth.sql
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/SymbolsInv/!svn/ver/17679/branches/2.0/develop/oracle/private/WF/wb/views/clients/CSL/dd_vr_10_xfr_oth.sql
+END
+dd_vr_10_xfrs.sql
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/SymbolsInv/!svn/ver/17679/branches/2.0/develop/oracle/private/WF/wb/views/clients/CSL/dd_vr_10_xfrs.sql
+END

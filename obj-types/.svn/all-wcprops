@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/SymbolsInv/!svn/ver/18861/branches/2.0/develop/oracle/private/WF/obj-types
+END
+generate.bat
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/obj-types/generate.bat
+END
+ot$_wf_dc_cpr_doc.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/SymbolsInv/!svn/ver/18861/branches/2.0/develop/oracle/private/WF/obj-types/ot$_wf_dc_cpr_doc.sql
+END
+install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/obj-types/install.sql
+END
+ot$_wf_dc_tk.sql
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SymbolsInv/!svn/ver/18861/branches/2.0/develop/oracle/private/WF/obj-types/ot$_wf_dc_tk.sql
+END
+drop_types.sql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SymbolsInv/!svn/ver/17822/branches/2.0/develop/oracle/private/WF/obj-types/drop_types.sql
+END
+ot$_wf_dc_ac.sql
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SymbolsInv/!svn/ver/18861/branches/2.0/develop/oracle/private/WF/obj-types/ot$_wf_dc_ac.sql
+END
+ot$_wf_dc_st.sql
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SymbolsInv/!svn/ver/18861/branches/2.0/develop/oracle/private/WF/obj-types/ot$_wf_dc_st.sql
+END
